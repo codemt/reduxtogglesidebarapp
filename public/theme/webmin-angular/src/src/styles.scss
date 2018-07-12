@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+/*
+Template:  Webmin - Bootstrap 4 & Angular 5 Dashboard Template
+Author: potenzaglobalsolutions.com
+Design and Developed by: potenzaglobalsolutions.com
+
+NOTE: This file includes all admin Template plugins and Shortcodes. If you don't want to use any plugins from below. You can simply remove that line from this file.
+*/
+
+/*
+================================================
+[  Table of contents  ]
+================================================
+
+1. Variables
+2. Mixins
+3. Helpers
+4. Typography
+5. Components
+	- Accordion
+	- Button
+	- Lists
+	- Nice Select
+	- Pricing
+	- Social Icon
+	- Tabs
+	- Owl Carousel
+6. Sidebar
+7. Layout
+8. Responsive
+
+======================================
+[ End table content ]
+======================================
+*/
+
+
+
+/*Global*/
+@import "~assets/scss/variables";
+@import "~assets/scss/mixins";
+@import "~assets/scss/helpers";
+@import "~assets/scss/typography";
+
+/*Shortcodes*/
+@import "~assets/scss/components/accordion";
+@import "~assets/scss/components/button";
+@import "~assets/scss/components/list-style";
+@import "~assets/scss/components/pricing";
+@import "~assets/scss/components/social-icon";
+@import "~assets/scss/components/tabs";
+@import "~assets/scss/components/owl-carousel";
+
+/*layout*/
+@import "~assets/scss/sidebar";
+@import "~assets/scss/layout";
+@import "~assets/scss/responsive";
+
+/* Fixes */
+
+.card .btn-group .dropdown-menu {
+	top:0;
+}
+.modal:before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.custom-day.range, .custom-day:hover, .ngb-dp-day .bg-primary {
+    background: #84ba3f!important;
+}
+.calendar-main .month-name {
+	margin-top:0.5rem;
+}
+.calendar-main .btn-success {
+	background:#84ba3f;
+	border-color:#84ba3f;
+}
+.calendar-main .btn-success:not(:disabled):not(.disabled):active, .calendar-main .btn-success:not(:disabled):not(.disabled).active {
+	background-color: #70a52c;
+    border-color: #70a52c;
+}

@@ -1,0 +1,237 @@
+﻿<div class="page-title">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="mb-0"> Chart</h4>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb pt-0 float-left float-sm-right ">
+        <li class="breadcrumb-item"><a href="javascript:void(0);" class="default-color">Home</a></li>
+        <li class="breadcrumb-item active">Chart</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6  mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Area chart </h5>
+
+        
+        <div style="height: 320px;">
+          <ngx-charts-area-chart [scheme]="areaChartColorScheme" [results]="areaChartMulti" [gradient]="areaChartGradient" [xAxis]="areaChartShowXAxis"
+                                 [yAxis]="areaChartShowYAxis" [legend]="areaChartShowLegend" [showXAxisLabel]="areaChartShowXAxisLabel"
+                                 [showYAxisLabel]="areaChartShowYAxisLabel" [xAxisLabel]="areaChartXAxisLabel" [yAxisLabel]="areaChartYAxisLabel"
+                                 [autoScale]="areaChartAutoScale" (select)="onAreaChartSelect($event)" [curve]="areaChartCurve">
+          </ngx-charts-area-chart>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Line Chart</h5>
+        <div style="height: 320px;">
+
+          <ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="lineChartMulti" [gradient]="lineChartGradient" [xAxis]="lineChartShowXAxis"
+                                 [yAxis]="lineChartShowYAxis" [legend]="lineChartShowLegend" [showXAxisLabel]="lineChartShowXAxisLabel"
+                                 [showYAxisLabel]="lineChartShowYAxisLabel" [xAxisLabel]="lineChartXAxisLabel" [yAxisLabel]="lineChartYAxisLabel"
+                                 [autoScale]="lineChartAutoScale" (select)="onSelect($event)" >
+          </ngx-charts-line-chart>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Bar Chart </h5>
+        <div style="height: 320px;">
+
+          <canvas baseChart class="chart" [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [colors]="barChartColors" [legend]="barChartLegend"
+                  [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" height="130"></canvas>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Area Chart with Point</h5>
+        <div id="morris-area-with-dotted" style="height: 320px;">
+          <ngx-charts-area-chart [scheme]="areaChartColorScheme" [results]="areaChartMulti" [gradient]="areaChartGradient" [xAxis]="areaChartShowXAxis"
+                                 [yAxis]="areaChartShowYAxis" [legend]="areaChartShowLegend" [showXAxisLabel]="areaChartShowXAxisLabel"
+                                 [showYAxisLabel]="areaChartShowYAxisLabel" [xAxisLabel]="areaChartXAxisLabel" [yAxisLabel]="areaChartYAxisLabel"
+                                 [autoScale]="areaChartAutoScale" (select)="onAreaChartSelect($event)">
+          </ngx-charts-area-chart>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Donut Chart </h5>
+        <div style="height: 320px;">
+          <canvas baseChart class="round-chart big-chart mb-0" [data]="doughnutChartData" [labels]="doughnutChartLabels" [options]="doughnutChartOptions" [chartType]="doughnutChartType" [colors]="doughnutChartColors" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Line Styles </h5>
+        <div  style="height: 320px;">
+          <canvas baseChart class="chart" [datasets]="barChartData1" [labels]="barChartLabels1" [options]="barChartOptions" [colors]="barChartColors" [legend]="barChartLegend1"
+                  [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" height="130"></canvas>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Doughnut </h5>
+        <div style="height: 320px;">
+          <canvas baseChart class="chart" [data]="pieChartData" [labels]="pieChartLabels" [options]="pieChartOptions" [chartType]="pieChartType" (chartHover)="chartHovered($event)" [colors]="pieChartColors"
+                  (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Combo </h5>
+        <div  style="height: 320px;">
+          <ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="lineChartMulti" [gradient]="lineChartGradient" [xAxis]="lineChartShowXAxis"
+                                 [yAxis]="lineChartShowYAxis" [legend]="lineChartShowLegend" [showXAxisLabel]="lineChartShowXAxisLabel"
+                                 [showYAxisLabel]="lineChartShowYAxisLabel" [xAxisLabel]="lineChartXAxisLabel" [yAxisLabel]="lineChartYAxisLabel"
+                                 [autoScale]="lineChartAutoScale" (select)="onSelect($event)" [curve]="areaChartCurve">
+          </ngx-charts-line-chart>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Line Styles</h5>
+        <div id="morris-donut-example" style="height: 320px;">
+          <canvas height="400" baseChart class="chart" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
+                  [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Custom Points</h5>
+        <div id="morris-donut-example" style="height: 320px;">
+          <canvas height="320" baseChart class="chart" [datasets]="areaChartData" [labels]="areaChartLabels" [options]="areaChartOptions" [colors]="areaChartColors"
+                  [legend]="areaChartLegend" [chartType]="areaChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Radar Chart</h5>
+        <div id="morris-donut-example" style="height: 320px;">
+         
+          <canvas baseChart class="chart" [datasets]="radarChartData" [labels]="radarChartLabels" [options]="radarChartOptions" [chartType]="radarChartType" [colors]="radarChartColors" (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Scatter Logx Chart</h5>
+        <div id="morris-donut-example" style="height: 320px;">
+          <canvas id="scatter-chart" height="400" baseChart class="chart" [datasets]="scatterChartData" [labels]="scatterChartLabels" [options]="scatterChartOptions" [colors]="scatterChartColors"
+                  [legend]="scatterChartLegend" [chartType]="scatterChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Polar Area Chart</h5>
+        <div id="morris-donut-example" style="height: 320px;">
+          <canvas baseChart class="chart" [data]="polarAreaChartData" [options]="polarChartOptions" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType" [colors]="ploarChartColors"
+                  (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Horizantal Bar Chart</h5>
+        <div id="morris-donut-example" style="height: 320px;">
+          
+
+          <ngx-charts-bar-horizontal-2d [scheme]="barChartColorScheme" [results]="barChartmulti" [gradient]="barChartGradient" [xAxis]="barChartShowXAxis"
+                                        [yAxis]="barChartShowYAxis" [legend]="barChartShowLegend" [showXAxisLabel]="barChartShowXAxisLabel"
+                                        [showYAxisLabel]="barChartShowYAxisLabel" [xAxisLabel]="barChartXAxisLabel" [yAxisLabel]="barChartYAxisLabel"
+                                        (select)="onSelect($event)">
+          </ngx-charts-bar-horizontal-2d>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-6 mb-30">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Pie Chart</h5>
+        <div id="morris-donut-example" style="height: 320px;">
+
+          <ngx-charts-pie-chart [scheme]="pieChartColorScheme" [results]="pieChartSingle" [legend]="pieChartShowLegend" [explodeSlices]="pieChart1ExplodeSlices"
+                                [labels]="pieChartShowLabels" [doughnut]="pieChart1Doughnut" [gradient]="pieChartGradient" (select)="onSelect($event)">
+          </ngx-charts-pie-chart>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

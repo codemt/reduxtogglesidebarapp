@@ -1,0 +1,42 @@
+﻿<div class="page-title">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="mb-0"> Editor</h4>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb pt-0 float-left float-sm-right ">
+        <li class="breadcrumb-item"><a href="#" class="default-color">Home</a></li>
+        <li class="breadcrumb-item active">Editor</li>
+      </ol>
+    </div>
+  </div>
+</div>
+<!-- main body -->
+<div class="row">
+  <div class="col-md-12 mb-30">
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <div class="main-content">
+          <h5 class="card-title"><a id="h1_editor-markdown-01" class="anchor" href="#h1_editor-markdown-01" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editor with Defaule Value</h5>
+          <ck-editor name="editor1" [(ngModel)]="editorValue" skin="moono-lisa" language="en" [fullPage]="true"></ck-editor>
+        </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <div class="main-content">
+          <h5 class="card-title"><a id="h1_editor-markdown-02" class="anchor" href="#h1_editor-markdown-02" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editor Get Value</h5>
+          <input type="button" value="Get Editor Value" class="btn btn-primary" (click)="GetValue()" />
+        </div>
+      </div>
+    </div>
+    <div class="card card-statistics">
+      <div class="card-body">
+        <div class="main-content">
+          <h5 class="card-title"><a id="h1_editor-markdown-03" class="anchor" href="#h1_editor-markdown-03" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editor in French Language</h5>
+          <ck-editor name="editor1" [(ngModel)]="editorValue" skin="moono-lisa" language="FR" [fullPage]="true"></ck-editor>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

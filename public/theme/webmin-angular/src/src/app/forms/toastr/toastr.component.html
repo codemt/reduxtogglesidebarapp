@@ -1,0 +1,142 @@
+﻿<div class="page-title">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="mb-0"> Toastr </h4>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb pt-0 float-left float-sm-right ">
+        <li class="breadcrumb-item"><a href="javascript:void(0);" class="default-color">Home</a></li>
+        <li class="breadcrumb-item active">Toastr </li>
+      </ol>
+    </div>
+  </div>
+</div>
+<!-- main body -->
+<div class="row">
+  <div class="col-xl-12 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body">
+        <h5 class="card-title">Toastr</h5>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="control-group">
+              <div class="controls">
+                <label class="control-label" for="title">Title</label>
+                <input id="title" type="text" class="form-control" placeholder="Enter a title ..." value="My name is Inigo Montoya."/>
+                <label class="control-label mt-3" for="message">Message</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Enter a message ..." value="You killed my father. Prepare to die!"></textarea>
+              </div>
+            </div>
+            <div class="control-group mt-4 mb-4">
+              <div class="controls">
+                <label class="checkbox" for="closeButton">
+                  <input id="closeButton" type="checkbox" value="checked" />Close Button
+                </label>
+              </div>
+              <!--<div class="controls">
+                <label class="checkbox" for="addBehaviorOnToastClick">
+                  <input id="addBehaviorOnToastClick" type="checkbox" value="checked" />Add behavior on toast click
+                </label>
+              </div>-->
+             
+            
+             
+              <div class="controls">
+                <label class="checkbox" for="customHTML">
+                  <input id="customHTML" type="checkbox" value="checked" />Add HTML in Message
+                </label>
+              </div>
+              <!--<div class="controls">
+                <label class="checkbox" for="newestOnTop">
+                  <input id="newestOnTop" type="checkbox" value="checked" />Newest on top
+                </label>
+              </div>-->
+
+              <div class="controls">
+                <label class="radio">
+                  <input type="checkbox" name="positions" value="toast-bottom-full-width" id="TitleClass" />Add 'h3' class in title
+                </label>
+                </div>
+              <div class="controls">
+                <label class="radio">
+                  <input type="checkbox" name="positions" value="toast-bottom-full-width" id="MessageClass" />Add 'text-uppercase' class in Message
+                </label>
+                </div>
+
+              </div>
+          </div>
+          <div class="col-md-2 mb-4">
+            <div class="control-group" id="toastTypeGroup">
+              <div class="controls">
+                <label class="d-block mb-2">Toast Type</label>
+                <label class="radio">
+                  <input type="radio" name="toasts" value="success" checked class="rd"/>Success
+                </label>
+                <label class="radio">
+                  <input type="radio" name="toasts" value="info" class="rd"/>Info
+                </label>
+                <label class="radio">
+                  <input type="radio" name="toasts" value="warning" class="rd"/>Warning
+                </label>
+                <label class="radio">
+                  <input type="radio" name="toasts" value="error" class="rd"/>Error
+                </label>
+              </div>
+            </div>
+            <!--<div class="control-group mt-4" id="positionGroup">
+              <div class="controls">
+                <label>Position</label>
+                <label class="radio">
+                  <input type="radio" name="positions" value="toast-top-right" checked class="rd1" />Top Right
+                </label>
+                <label class="radio">
+                  <input type="radio" name="positions" value="toast-bottom-right" class="rd1"/>Bottom Right
+                </label>
+                <label class="radio">
+                  <input type="radio" name="positions" value="toast-bottom-left"class="rd1" />Bottom Left
+                </label>
+                <label class="radio">
+                  <input type="radio" name="positions" value="toast-top-left" class="rd1"/>Top Left
+                </label>
+                <label class="radio">
+                  <input type="radio" name="positions" value="toast-top-full-width" class="rd1"/>Top Full Width
+                </label>
+                <label class="radio">
+                  <input type="radio" name="positions" value="toast-bottom-full-width" class="rd1"/>Bottom Full Width
+                </label>
+                <label class="radio">
+                  <input type="radio" name="positions" value="toast-top-center" class="rd1"/>Top Center
+                </label>
+                <label class="radio">
+                  <input type="radio" name="positions" value="toast-bottom-center" class="rd1"/>Bottom Center
+                </label>
+              </div>
+            </div>-->
+          </div>
+          
+          <div class="col-md-4 mb-4">
+            <div class="control-group">
+              <div class="controls">
+                <label class="control-label" for="showDuration">Show Duration</label>
+                <input id="showDuration" type="number" placeholder="ms" class="form-control" value="2000" />
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button type="button" class="btn btn-primary mr-1 mb-1" id="showtoast" (click)="showToast()">Show Toast</button>
+            <button type="button" class="btn btn-warning mr-1 mb-1" id="cleartoasts" (click)="clearAllToasts()">Clear Toasts</button>
+            
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+            <pre id='toastrOptions'> Output: </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

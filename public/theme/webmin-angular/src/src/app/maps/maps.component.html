@@ -1,0 +1,53 @@
+﻿<div class="page-title">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="mb-0"> Maps</h4>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb pt-0 float-left float-sm-right ">
+        <li class="breadcrumb-item"><a href="javascript:void(0);" class="default-color">Home</a></li>
+        <li class="breadcrumb-item active">Maps</li>
+      </ol>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 mb-30">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title"> World Map </h5>
+         <div id="world-map-markers">
+              <dx-vector-map 
+                  id="vector-map" #vectorMap
+                  [bounds]="viewportData[0].coordinates" 
+                  (onZoomFactorChanged)="zoomChanged($event)" 
+                  (onCenterChanged)="centerChanged($event)">
+                  <dxi-layer [dataSource]="worldMap"></dxi-layer>
+              </dx-vector-map>
+                <div class="options">
+                    <div class="caption">Options</div>
+                    <div class="option">
+                        <span>Continent</span>
+                        <dx-select-box 
+                            [dataSource]="viewportData" 
+                            [width]="210" 
+                            displayExpr="continent" 
+                            valueExpr="coordinates" 
+                            [(value)]="vectorMap.bounds"></dx-select-box>
+
+                    </div>
+                    <div class="option">
+                        <span>Zoom factor</span>
+                        <dx-text-box [value]="zoomFactorValue" [readOnly]="true" [width]="210">
+                        </dx-text-box>
+                    </div>
+                    <div class="option">
+                        <span>Center</span>
+                        <dx-text-box [value]="centerValue" [readOnly]="true" [width]="210"></dx-text-box>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>

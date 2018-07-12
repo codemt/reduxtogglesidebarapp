@@ -1,0 +1,99 @@
+﻿<div class="page-title">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="mb-0"> Popover & Tooltips </h4>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb pt-0 float-left float-sm-right ">
+        <li class="breadcrumb-item"><a href="javascript:void(0);" class="default-color">Home</a></li>
+        <li class="breadcrumb-item active">Popover & Tooltips </li>
+      </ol>
+    </div>
+  </div>
+</div>
+<!-- main body -->
+<div class="row">
+  <div class="col-xl-6 mb-30">
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Popover</h5>
+        <button type="button" class="btn btn-lg btn-danger mb-1" ngbPopover="What a great tip!" triggers="manual" #p="ngbPopover" (click)="p.open()" popoverTitle="Pop title">Click to toggle popover</button>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Four directions</h5>
+        <button type="button" class="btn btn-secondary" placement="top"
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on top">
+          Popover on top
+        </button>
+
+        <button type="button" class="btn btn-secondary" placement="right"
+                ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on right">
+          Popover on right
+        </button>
+
+        <button type="button" class="btn btn-secondary" placement="bottom"
+                ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on bottom">
+          Popover on bottom
+        </button>
+
+        <button type="button" class="btn btn-secondary" placement="left"
+                ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on left">
+          Popover on left
+        </button>
+      </div>
+    </div>
+    <div class="card card-statistics">
+      <div class="card-body">
+        <h5 class="card-title">Hover Popover</h5>
+        <button type="button" class="btn btn-secondary" ngbPopover="You see, I show up on hover!" triggers="mouseenter:mouseleave" popoverTitle="Pop title">
+          Hover over me!
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6 mb-30">
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Tooltip</h5>
+        <button type="button" class="btn btn-secondary" placement="top" ngbTooltip="Tooltip on top">
+          Tooltip on top
+        </button>
+        <button type="button" class="btn btn-secondary" placement="right" ngbTooltip="Tooltip on right">
+          Tooltip on right
+        </button>
+        <button type="button" class="btn btn-secondary" placement="bottom" ngbTooltip="Tooltip on bottom">
+          Tooltip on bottom
+        </button>
+        <button type="button" class="btn btn-secondary" placement="left" ngbTooltip="Tooltip on left">
+          Tooltip on left
+        </button>
+      </div>
+    </div>
+    <div class="card card-statistics">
+      <div class="card-body">
+        <h5 class="card-title">Custom and manual triggers</h5>
+        <p>
+            You can easily override open and close triggers by specifying event names (separated by <code>:</code>) in the <code>triggers</code> property.
+          </p>
+
+          <button type="button" class="btn btn-outline-secondary" ngbTooltip="You see, I show up on click!" triggers="click:blur">
+            Click me!
+          </button>
+
+          <hr>
+          <p>
+            Alternatively you can take full manual control over tooltip opening / closing events.
+          </p>
+
+          <button type="button" class="btn btn-outline-secondary" ngbTooltip="What a great tip!" triggers="manual" #t="ngbTooltip" (click)="t.open()">
+            Click me to open a tooltip
+          </button>
+          <button type="button" class="btn btn-outline-secondary" (click)="t.close()">
+            Click me to close a tooltip
+          </button>
+      </div>
+    </div>
+  </div>
+</div> 

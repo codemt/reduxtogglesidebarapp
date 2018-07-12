@@ -1,0 +1,196 @@
+﻿<div class="page-title">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="mb-0">Modal </h4>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb pt-0 float-left float-sm-right ">
+        <li class="breadcrumb-item"><a href="javascript:void(0);" class="default-color">Home</a></li>
+        <li class="breadcrumb-item active">Modal </li>
+      </ol>
+    </div>
+  </div>
+</div>
+<!-- main body -->
+<div class="row">
+  <div class="col-xl-6 mb-30">
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Modals</h5>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="openModal('exampleModal')">
+          Launch demo modal
+        </button>
+        <!-- Modal -->
+            <app-model class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <div class="modal-title" id="exampleModalLabel">
+                      <div class="section-title mb-10">
+                        <h6>EXPERTISE</h6>
+                        <h2>Modal title</h2>
+                        <p>We are an innovative agency. We develop and design customers around the world. Our clients are some of the most forward-looking companies in the world.</p>
+                      </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal('exampleModal')">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <span class="dropcap square">Y</span>ou can use model anywhere in your website consectetur adipisicing elit. At vel sed corporis delectus quo ea molestias a ab ad officiis eaque natus animi reiciendis sint beatae, dolor inventore praesentium lorem qui.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal('exampleModal')" >Close</button>
+                  </div>
+                </div>
+              </div>
+            </app-model>
+      </div>
+    </div>
+    <div class="card card-statistics">
+      <div class="card-body">
+        <h5 class="card-title">Vertically centered</h5>
+        <!-- Large modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="openModal('exampleModalCenter')"> Launch demo modal </button>
+
+        <app-model class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="modal-title" id="exampleModalLongTitle">
+                  <div class="section-title mb-10">
+                    <h6>EXPERTISE</h6>
+                    <h2>Modal title</h2>
+                    <p>We are an innovative agency. We develop and design customers around the world. Our clients are some of the most forward-looking companies in the world.</p>
+                  </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal('exampleModalCenter')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal('exampleModalCenter')">Close</button>
+              </div>
+            </div>
+          </div>
+        </app-model>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6 mb-30">
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Scrolling long content</h5>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" (click)="openModal('exampleModalLong')">
+          Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <app-model class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="modal-title" id="exampleModalLongTitle">
+                  <div class="section-title mb-10">
+                    <h6>EXPERTISE</h6>
+                    <h2>Modal title</h2>
+                    <p>We are an innovative agency. We develop and design customers around the world. Our clients are some of the most forward-looking companies in the world.</p>
+                  </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal('exampleModalLong')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal('exampleModalLong')">Close</button>
+              </div>
+            </div>
+          </div>
+        </app-model>
+
+      </div>
+    </div>
+    <div class="card card-statistics">
+      <div class="card-body">
+        <h5 class="card-title">Modals large small</h5>
+        <!-- Large modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" (click)="openModal('divlargemodal')">Large modal</button>
+
+        <app-model class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="divlargemodal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="modal-title" id="exampleModalLongTitle">
+                  <div class="section-title mb-10">
+                    <h6>EXPERTISE</h6>
+                    <h2>Modal title</h2>
+                    <p>We are an innovative agency. We develop and design customers around the world. Our clients are some of the most forward-looking companies in the world.</p>
+                  </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal('divlargemodal')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal('divlargemodal')">Close</button>
+              </div>
+            </div>
+          </div>
+        </app-model>
+
+        <!-- Small modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm" (click)="openModal('smallmodal')">Small modal</button>
+        <app-model class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="smallmodal">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="modal-title" id="exampleModalLongTitle">
+                  <div class="section-title mb-10">
+                    <h6>EXPERTISE</h6>
+                    <h2>Modal title</h2>
+                  </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal('smallmodal')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal('smallmodal')">Close</button>
+              </div>
+            </div>
+          </div>
+        </app-model>
+      </div>
+    </div>
+  </div>
+</div> 

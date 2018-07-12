@@ -1,0 +1,175 @@
+﻿<div class="page-title">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="mb-0"> Colorpicker</h4>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb pt-0 float-left float-sm-right ">
+        <li class="breadcrumb-item"><a href="javascript:void(0);" class="default-color">Home</a></li>
+        <li class="breadcrumb-item active">Colorpicker</li>
+      </ol>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 mb-30">
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Simple usage </h5>
+          <div class="input-group colorpicker-component" title="Using input value">
+             <input class="form-control input-lg"   [cpAlphaChannel]="'always'" [cpOutputFormat]="'rgba'" [(colorPicker)]="color12" [cpPosition]="'bottom'" [style.background]="color12"/><!-- [value]="color14"-->
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Show the color in the input field: </h5>
+          <div id="cp2" class="input-group colorpicker-component colorpicker-element" title="Using input value">
+            <input type="text" class="form-control input-lg" value="#DD0F20" [value]="color15" />
+            <span class="input-group-addon" [cpPosition]="'left'" [colorPicker]="color15" (colorPickerChange)="color15=onChangeColorHex8($event);color15=$event" ><i [style.background-color]="color15"></i></span>              
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Output format:</h5>
+          <div id="cp3a" class="input-group colorpicker-component mb-30 colorpicker-element" data-color="#F18A31"
+               title="Using data-color attribute in the colorpicker element">
+            <input class="form-control input-lg" type="text" [value]="color6" />
+            <span class="input-group-addon" [cpPosition]="'left'" [cpOutputFormat]="'rgba'" [(colorPicker)]="color6" ><i [style.background-color]="color6"></i></span>
+          </div>
+          <div id="cp3b" class="input-group colorpicker-component colorpicker-element" title="Using data-color attribute in the input">
+            <input type="text" class="form-control input-lg" data-color="#F8EB48" [value]="color2" />
+            <span class="input-group-addon" [cpPosition]="'left'" [cpAlphaChannel]="'always'" [cpOutputFormat]="'hsla'" [colorPicker]="color2" (colorPickerChange)="color2=onChangeColorHex8($event);color2=$event"><i [style.background-color]="color2"></i></span>              
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Changing dialog position:</h5>
+          <div id="cp4" class="input-group colorpicker-component colorpicker-element" title="Using color option">
+            <input type="text" class="form-control input-lg" data-color="#F8EB48" [value]="color3" />
+            <span class="input-group-addon" [cpPosition]="'top'" [cpAlphaChannel]="'always'" [cpOutputFormat]="'hex'" [colorPicker]="color3" (colorPickerChange)="color3=onChangeColorHex8($event);color3=$event"><i [style.background-color]="color3"></i></span>              
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">You can introduce a offset of the color picker relative to the html element:  </h5>
+            <span [style.color]="color6" class="input-group-addon mt-0 mb-0 d-inline-block" [cpPosition]="'bottom'" [(colorPicker)]="color6" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true">Choose Me!</span>
+          <div id="cp5" class="input-group colorpicker-component colorpicker-element" title="Using format option">                       
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title"> Show cancel button:</h5>
+          <div id="cp5b" class="input-group colorpicker-component colorpicker-element" title="Using format option">
+            <input class="form-control input-lg" type="text" [value]="color4" />
+            <span class="input-group-addon" [cpPosition]="'left'"  [cpCancelButton]="true" [(colorPicker)]="color4"><i [style.background-color]="color4"></i></span>
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title"> Change cancel button class, in this example we are using a bootstrap button:</h5>
+          <div id="cp6" class="input-group colorpicker-component colorpicker-element" title="Using horizontal option">
+            <input type="text" class="form-control input-lg" data-color="#F8EB48" [value]="color7" />
+            <span class="input-group-addon" [cpPosition]="'left'" [cpAlphaChannel]="'always'" [cpCancelButton]="true"  [cpCancelButtonClass]= "'btn btn-primary btn-xs'" [cpOutputFormat]="'hex'" [colorPicker]="color7" (colorPickerChange)="color7=onChangeColorHex8($event);color7=$event"><i [style.background-color]="color7"></i></span>              
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title"> Show OK button:</h5>
+          <div id="cp6" class="input-group colorpicker-component colorpicker-element" title="Using horizontal option">
+            <input type="text" class="form-control input-lg" data-color="#F8EB48" [value]="color17" />
+            <span class="input-group-addon" [cpPosition]="'top'" [cpOKButton]="true"
+       [cpSaveClickOutside]="false" [cpCancelButton]="true"  [cpOutputFormat]="'hex'" [colorPicker]="color17" (colorPickerChange)="color17=onChangeColorHex8($event);color17=$event"><i [style.background-color]="color17"></i></span>              
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics">
+      <div class="card-body">
+        <h5 class="card-title"> Change of button class, in this example we are using a bootstrap button:</h5>
+          <div id="cp6" class="input-group colorpicker-component colorpicker-element" title="Using horizontal option">
+            <input type="text" class="form-control input-lg" data-color="#F8EB48" [value]="color18" />
+            <span class="input-group-addon" [cpPosition]="'top'" [cpOKButton]="true"
+            [cpSaveClickOutside]="false" [cpCancelButton]="true" [cpOKButtonClass]= "'btn btn-primary btn-xs'"  [cpCancelButtonClass]= "'btn btn-primary btn-xs'" [cpOutputFormat]="'hex'" [colorPicker]="color18" (colorPickerChange)="color18=onChangeColorHex8($event);color18=$event"><i [style.background-color]="color18"></i></span>              
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 mb-30">
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Show the dialog permanently: </h5>
+          <div class="text-right" id="cp7">
+              <span [style.background]="arrayColors[selectedColor]" [cpToggle]="true"  [cpOutputFormat]="'rgba'" [cpDialogDisplay]="'inline'" [cpCancelButton]="true" [cpCancelButtonClass]= "'btn btn-primary btn-xs'" [(colorPicker)]="arrayColors[selectedColor]"></span>
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">With preset colors:  </h5>
+          <div id="cp9" class="input-group colorpicker-component colorpicker-element">
+            <input class="form-control input-lg" type="text" [value]="color14" />
+            <span class="input-group-addon" [cpPosition]="'left'" [cpOutputFormat]="'hex'" [cpPresetColors]="['#fff', '#000', '#2889e9', '#e920e9', '#fff500', 'rgb(236,64,64)']" [(colorPicker)]="color14"><i [style.background-color]="color14"></i></span>
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Use cpToggle with cpIgnoredElements:  </h5>
+          <div id="cp10" class="input-group colorpicker-component colorpicker-element">
+            <input class="form-control input-lg" type="text" [value]="color9"  />
+            <span #ignoredInput [cpIgnoredElements]="[ignoredButton, ignoredInput]" [(cpToggle)]="toggle" class="input-group-addon" [cpAlphaChannel]="'enabled'" [cpPosition]="'left'" [cpOutputFormat]="'hex'" [(colorPicker)]="color9"><i [style.background-color]="color9"></i></span>
+          </div>
+            <button class="button x-small mt-2" #ignoredButton (click)="toggle=!toggle" >Toggle</button>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Add and remove preset colors: </h5>
+          <div id="cp11" class="input-group colorpicker-component colorpicker-element">
+            <input class="form-control input-lg" type="text" [value]="color13" />
+            <span class="input-group-addon" [cpAlphaChannel]="'always'" [cpPresetColors]="['#fff', '#2889e9']"  [cpAddColorButton]="true" [cpPosition]="'left'" [cpOutputFormat]="'rgba'" [(colorPicker)]="color13"><i [style.background-color]="color13"></i></span>
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Set Message for Empty Present color with css class  </h5>
+          <div id="cp11" class="input-group colorpicker-component colorpicker-element">
+            <input class="form-control input-lg" type="text" [value]="color8" />
+            <span class="input-group-addon" [cpPresetEmptyMessage]="'No Color Exists!'" [cpPresetColors]="['#fff', '#2889e9']" [cpPresetEmptyMessageClass]="''" [cpRemoveColorButtonClass]="''" [cpAddColorButtonText]="'Add'" [cpAddColorButtonClass]="''" [cpAddColorButton]="true" [cpAlphaChannel]="'disabled'" [cpPosition]="'left'" [cpOutputFormat]="'rgba'" [(colorPicker)]="color8"><i [style.background-color]="color8"></i></span>
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Change alpha channel behaviour:  </h5>
+          <div id="cp11" class="input-group colorpicker-component colorpicker-element">
+            <input class="form-control input-lg" type="text" [value]="color8" />
+            <span class="input-group-addon" [cpAlphaChannel]="'disabled'" [cpPosition]="'left'" [cpOutputFormat]="'rgba'" [(colorPicker)]="color8"><i [style.background-color]="color8"></i></span>
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <div id="cp12" class="input-group colorpicker-component colorpicker-element">
+            <input class="form-control input-lg" type="text" [value]="color10" />
+            <span class="input-group-addon" [cpAlphaChannel]="'always'" [cpPosition]="'left'" [cpOutputFormat]="'rgba'" [(colorPicker)]="color10"><i [style.background-color]="color10"></i></span>
+          </div>
+      </div>
+    </div>
+    <div class="card card-statistics">
+      <div class="card-body">
+        <div id="cp13" class="input-group colorpicker-component colorpicker-element">
+            <input class="form-control input-lg" type="text" [value]="color11" />
+            <span class="input-group-addon" [cpPosition]="'left'" [cpAlphaChannel]="'always'"[cpOutputFormat]="'hex'" [(colorPicker)]="color11" (colorPickerChange)="color11=onChangeColorHex8($event);color11=$event"><i [style.background-color]="color11"></i></span>
+          </div>
+      </div>
+    </div>
+  </div>
+</div> 

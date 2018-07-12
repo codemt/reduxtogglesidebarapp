@@ -1,0 +1,325 @@
+<div class="page-title">
+      <div class="row">
+          <div class="col-sm-6">
+              <h4 class="mb-0"> Form Validation</h4>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb pt-0 float-left float-sm-right ">
+              <li class="breadcrumb-item"><a href="javascript:void(0);" class="default-color">Home</a></li>
+              <li class="breadcrumb-item active">Form Validation</li>
+            </ol>
+          </div>
+        </div>
+  </div>
+ <!-- main body --> 
+    <div class="row">   
+      <div class="col-xl-6 mb-30">     
+        <div class="card card-statistics h-100"> 
+          <div class="card-body">
+           <h5 class="card-title">Simple Form</h5>
+           <form class="form-horizontal" [formGroup]="signupForm" id="signupForm">
+              <div class="form-group" > <!--[ngClass]="displayFieldCss('firstname')"-->
+                <label class="control-label" for="firstname">First name</label>
+                <div class="mb-2"> 
+                  <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name" formControlName="firstname" />
+                  <em class="error help-block" *ngIf="!signupForm.get('firstname').valid && (signupForm.get('firstname').dirty || signupForm.get('firstname').touched)">Please enter your firstname</em>                  
+                </div>
+              </div>
+              <div class="form-group" >
+                <label class="control-label" for="lastname">Last name</label>
+                <div class="mb-2">
+                  <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name" formControlName="lastname" />
+                  <em class="error help-block" *ngIf="!signupForm.get('lastname').valid && (signupForm.get('lastname').dirty || signupForm.get('lastname').touched)">Please enter your lastname</em>                    
+                </div>
+              </div>
+              <div class="form-group" >
+                <label class="control-label" for="username">Username</label>
+                <div class="mb-2">
+                  <input type="text" class="form-control" id="username" name="username" placeholder="Username" formControlName="username" />
+                    <div *ngIf="signupForm.controls['username'].touched && !signupForm.controls['username'].valid">
+                        <em class="error help-block" *ngIf="signupForm.controls['username'].hasError('required') " >
+                            Please enter a username
+                        </em>
+                        <em class="error help-block" *ngIf="signupForm.controls['username'].hasError('minlength') " >
+                             Your username must consist of at least 2 characters
+                        </em>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group" >
+                <label class="control-label" for="email">Email</label>
+                <div class="mb-2">
+                  <input type="text" class="form-control" id="email" name="email" placeholder="Email" formControlName="email" />
+                  <em class="error help-block" *ngIf="!signupForm.get('email').valid && (signupForm.get('email').dirty || signupForm.get('email').touched)">Please enter a valid email address</em>                    
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="password">Password</label>
+                <div class="mb-2">
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Password" formControlName="password"  />
+                    <div *ngIf="signupForm.controls['password'].touched && !signupForm.controls['password'].valid">
+                        <em class="error help-block" *ngIf="signupForm.controls['password'].hasError('required') ">
+                            Please provide a password
+                        </em>
+                        <em class="error help-block" *ngIf="signupForm.controls['password'].hasError('minlength') " >
+                             Your password must be at least 5 characters long
+                        </em>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="confirm_password">Confirm password</label>
+                <div class="mb-2">
+                  <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" formControlName="confirmPassword" />
+                    <div *ngIf="signupForm.controls['confirmPassword'].touched && !signupForm.controls['confirmPassword'].valid">
+                        <em class="error help-block" *ngIf="signupForm.controls['confirmPassword'].hasError('required') " >
+                                Please provide a password
+                        </em>
+                        <em class="error help-block" *ngIf="signupForm.controls['confirmPassword'].hasError('minlength') " >
+                                 Your password must be at least 5 characters long
+                        </em>                        
+                    </div>
+                    <em class="error help-block" *ngIf="checkPasswords('password','confirmPassword')" >
+                                Please enter the same password as above
+                    </em>
+                </div>
+              </div>
+              <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id="agree" name="agreeTerms" value="agree" class="pr-2" formControlName="agreeTerms" /> Please agree to our policy
+                    </label>
+                    <!--<span class="error-msg" *ngIf="signupForm.hasError('required', 'agreeTerms')">Please accept our policy</span>-->
+                     <em class="error help-block" *ngIf="oncheckTerms('agreeTerms')">Please accept our policy</em>
+                </div>
+              </div>
+              <div class="form-group">
+             <button type="submit" class="btn btn-primary" name="signup" value="Sign up" (click)="onSubmit()">Sign up</button>
+              </div>
+            </form>
+          </div>
+        </div>   
+      </div>
+      <div class="col-xl-6 mb-30">     
+        <div class="card card-statistics h-100"> 
+          <div class="card-body">
+            <h5 class="card-title">Using feedback icons</h5>
+            <form [formGroup]="signupIconForm" id="signupForm1">
+              <div class="form-group">
+                <label class="control-label" for="firstname1">First name</label>
+                <div class="mb-2">
+                  <input type="text" class="form-control" id="firstname1" name="firstname1" placeholder="First name" formControlName="firstname1"/>
+                    <span class="fa fa-times form-control-feedback pr-2" *ngIf="!signupIconForm.get('firstname1').valid && (signupIconForm.get('firstname1').dirty || signupIconForm.get('firstname1').touched)"></span>
+                    <em class="error help-block" *ngIf="!signupIconForm.get('firstname1').valid && (signupIconForm.get('firstname1').dirty || signupIconForm.get('firstname1').touched)">Please enter your firstname</em>
+                   <!--<app-field-error-display [displayError]="isIconFieldValid('firstname1')" errorMsg="Please enter your firstname">
+                  </app-field-error-display>-->
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="lastname1">Last name</label>
+                <div class="mb-2">
+                  <input type="text" class="form-control" id="lastname1" name="lastname1" placeholder="Last name" formControlName="lastname1" />
+                  <span class="fa fa-times form-control-feedback pr-2" *ngIf="!signupIconForm.get('lastname1').valid && (signupIconForm.get('lastname1').dirty || signupIconForm.get('lastname1').touched)"></span>
+                    <em  class="error help-block" *ngIf="!signupIconForm.get('lastname1').valid && (signupIconForm.get('lastname1').dirty || signupIconForm.get('lastname1').touched)">Please enter your lastname</em>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="username1">Username</label>
+                <div class="mb-2">
+                  <input type="text" class="form-control" id="username1" name="username1" placeholder="Username" formControlName="username1" />
+                    <div *ngIf="signupIconForm.controls['username1'].touched && !signupIconForm.controls['username1'].valid">
+                    <span class="fa fa-times form-control-feedback pr-2" *ngIf="signupIconForm.controls['username1'].hasError('required') "></span>
+                    <em class="error help-block" *ngIf="signupIconForm.controls['username1'].hasError('required') " >
+                            Please enter a username
+                    </em>
+
+                     <span class="fa fa-times form-control-feedback pr-2" *ngIf="signupIconForm.controls['username1'].hasError('minlength') "></span>
+                        <em class="error help-block" *ngIf="signupIconForm.controls['username1'].hasError('minlength') " >
+                             Your username must consist of at least 2 characters
+                        </em> 
+                      </div>  
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label" for="email1">Email</label>
+                <div class="mb-2">
+                  <input type="text" class="form-control" id="email1" name="email1" placeholder="Email" formControlName="email1" />
+                    <span class="fa fa-times form-control-feedback pr-2" *ngIf="!signupIconForm.get('email1').valid && (signupIconForm.get('email1').dirty || signupIconForm.get('email1').touched)"></span>
+                    <em class="error help-block" *ngIf="!signupIconForm.get('email1').valid && (signupIconForm.get('email1').dirty || signupIconForm.get('email1').touched)">Please enter a valid email address</em>                    
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label" for="password1">Password</label>
+                <div class="mb-2">
+                  <input type="password" class="form-control" id="password1" name="password1" placeholder="Password" formControlName="password1" />
+
+                    <div *ngIf="signupIconForm.controls['password1'].touched && !signupIconForm.controls['password1'].valid">
+                    <span class="fa fa-times form-control-feedback pr-2" *ngIf="signupIconForm.controls['password1'].hasError('required') "></span>
+                    <em class="error help-block" *ngIf="signupIconForm.controls['password1'].hasError('required') ">
+                            Please provide a password
+                        </em>
+
+                    <span class="fa fa-times form-control-feedback pr-2" *ngIf="signupIconForm.controls['password1'].hasError('minlength') "></span>
+                        <em class="error help-block" *ngIf="signupIconForm.controls['password1'].hasError('minlength') " >
+                             Your password must be at least 5 characters long
+                        </em>
+                        </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="confirm_password1">Confirm password</label>
+                <div class="mb-2">
+                  <input type="password" class="form-control" id="confirmPassword1" name="confirmPassword1" placeholder="Confirm password" formControlName="confirmPassword1" />
+                    
+                    <div *ngIf="signupIconForm.controls['confirmPassword1'].touched && !signupIconForm.controls['confirmPassword1'].valid">
+                    <span class="fa fa-times form-control-feedback pr-2" *ngIf="signupIconForm.controls['confirmPassword1'].hasError('required') "></span>
+                    <em class="error help-block" *ngIf="signupIconForm.controls['confirmPassword1'].hasError('required') " >
+                                Please provide a password
+                        </em>
+                     <span class="fa fa-times form-control-feedback pr-2" *ngIf="signupIconForm.controls['confirmPassword1'].hasError('minlength') "></span>
+                        <em class="error help-block" *ngIf="signupIconForm.controls['confirmPassword1'].hasError('minlength') " >
+                                 Your password must be at least 5 characters long
+                        </em>    
+                                       
+                    </div>
+                    <span class="fa fa-times form-control-feedback pr-2" *ngIf="checkIconPasswords('password1','confirmPassword1')"></span>
+                    <em class="error help-block" *ngIf="checkIconPasswords('password1','confirmPassword1')" >
+                                Please enter the same password as above
+                    </em>
+                </div>
+              </div>
+              <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+
+                      <input type="checkbox" id="agree1" name="agree1" value="agree" class="pr-2" formControlName="agreeIconTerms" />
+                        <span class="fa fa-times form-control-feedback pr-2" *ngIf="oncheckIconTerms('agreeIconTerms')"></span>
+                         Please agree to our policy
+
+                        <em class="error help-block" *ngIf="oncheckIconTerms('agreeIconTerms')">Please accept our policy</em>
+                    </label>
+                </div>
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary" name="signup1" value="Sign up" (click)="onSubmit1()">Sign up</button>
+              </div>
+            </form>
+          </div>
+        </div>   
+      </div>
+      <div class="col-xl-6 mb-30">     
+        <div class="card card-statistics h-100"> 
+          <div class="card-body">
+           <h5 class="card-title">Semantic-UI Form</h5>
+            <form class="ui grid form" [formGroup]="signupUIForm">
+            <div class="row field" [ngClass]="displayUIFieldCss('firstname2')">
+              <label class="twelve wide column" for="firstname2">First name</label>
+              <div class="twelve wide column">
+                <div class="ui input">
+                  <input id="firstname2" name="firstname2" type="text" placeholder="First name" formControlName="firstname2" />
+                </div>
+                <app-field-error-display [displayError]="isUIFieldValid('firstname2')" errorMsg="Please enter your firstname">
+                  </app-field-error-display>
+              </div>
+            </div>
+
+            <div class="row field" [ngClass]="displayUIFieldCss('lastname2')">
+              <label class="twelve wide column" for="lastname2">Last name</label>
+              <div class="twelve wide column">
+                <div class="ui input">
+                  <input id="lastname2" name="lastname2" type="text" placeholder="Last name" formControlName="lastname2" />
+                </div>
+                <app-field-error-display [displayError]="isUIFieldValid('lastname2')" errorMsg="Please enter your lastname">
+                  </app-field-error-display>
+              </div>
+            </div>
+
+            <div class="row field" [ngClass]="displayUIFieldCss('username2')">
+              <label class="twelve wide column" for="username2">Username</label>
+              <div class="twelve wide column">
+                <div class="ui input">
+                  <input id="username2" name="username2" type="text" placeholder="Username" formControlName="username2" />
+                     
+                </div>
+                <div *ngIf="signupUIForm.controls['username2'].touched && !signupUIForm.controls['username2'].valid">
+                            <app-field-error-display [displayError]="!isRequiredValid('username2')" errorMsg="Please enter a username">
+                          </app-field-error-display>
+                     </div>
+                 <app-field-error-display [displayError]="!isminlengthValid('username2')" errorMsg="Your username must consist of at least 2 characters">
+                    </app-field-error-display>
+              </div>
+            </div>
+
+            <div class="row field" [ngClass]="displayUIFieldCss('email2')">
+              <label class="twelve wide column" for="email2">Email</label>
+              <div class="twelve wide column">
+                <div class="ui input">
+                  <input id="email2" name="email2" type="text" placeholder="Email" formControlName="email2" />
+                    
+                </div>
+                <app-field-error-display [displayError]="isUIFieldValid('email2')" errorMsg="Please enter a valid email address">
+                    </app-field-error-display>
+              </div>
+            </div>
+
+            <div class="row field" [ngClass]="displayUIFieldCss('password2')">
+              <label class="twelve wide column" for="password2">Password</label>
+              <div class="twelve wide column">
+                <div class="ui input">
+                  <input id="password2" name="password2" type="password" placeholder="Password" formControlName="password2" />
+                </div>
+                <div *ngIf="signupUIForm.controls['password2'].touched && !signupUIForm.controls['password2'].valid">
+                      <app-field-error-display [displayError]="!isRequiredValid('password2')" errorMsg="Please provide a password">
+                      </app-field-error-display>
+                  </div>
+                <app-field-error-display [displayError]="!isminlengthValid('password2')" errorMsg="Your password must be at least 5 characters long">
+                    </app-field-error-display>
+              </div>
+            </div>
+
+            <div class="row field" [ngClass]="displayUIFieldCss('confirmPassword2')">
+              <label class="twelve wide column" for="confirm_password2">Confirm password</label>
+              <div class="twelve wide column">
+                <div class="ui input">
+                  <input id="confirmPassword2" name="confirmPassword2" type="password" placeholder="Confirm password" formControlName="confirmPassword2" />
+                    
+                </div>
+                <div *ngIf="signupUIForm.controls['confirmPassword2'].touched && !signupUIForm.controls['confirmPassword2'].valid">
+                        <app-field-error-display [displayError]="!isRequiredValid('confirmPassword2')" errorMsg="Please provide a password">
+                      </app-field-error-display>
+                     </div>
+                <app-field-error-display [displayError]="!isminlengthValid('confirmPassword2')" errorMsg="Your password must be at least 5 characters long">
+                    </app-field-error-display>
+
+                    <app-field-error-display [displayError]="checkUIPasswords('password2','confirmPassword2')" errorMsg="Your Please enter the same password as above">
+                    </app-field-error-display>
+              </div>
+            </div>
+
+            <div class="row field" [ngClass]="displayUIFieldCss('agreeUITerms')">
+              <label class="twelve wide column"></label>
+              <div class="twelve wide column">
+                <div class="ui checkbox">
+                  <input name="agreeUITerms" type="checkbox" formControlName="agreeUITerms" /> <label>Please agree to our policy</label>
+                </div>
+                 <app-field-error-display [displayError]="oncheckUITerms('agreeUITerms')" errorMsg="Please accept our policy">
+                    </app-field-error-display>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="twelve wide column"></label>
+              <div class="twelve wide column">
+                <button type="submit" class="btn btn-primary ml-15" (click)="onSubmit2()">Sign up</button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>   
+      </div>
+  </div> 
+
+ <!--=================================
+ wrapper -->

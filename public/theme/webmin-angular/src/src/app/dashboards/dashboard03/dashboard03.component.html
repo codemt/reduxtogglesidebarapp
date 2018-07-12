@@ -1,0 +1,597 @@
+﻿<div class="page-title">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="mb-0"> Dashboard 03</h4>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
+        <li class="breadcrumb-item"><a href="javascript:void(0);" class="default-color">Home</a></li>
+        <li class="breadcrumb-item active">Dashboard 03</li>
+      </ol>
+    </div>
+  </div>
+</div>
+<!-- widgets -->
+<div class="row">
+  <div class="col-xl-3 col-md-6 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body p-0">
+        <div class="bg-success">
+          <div class="d-block d-md-flex justify-content-between p-3">
+            <div class="d-block">
+              <h5 class="text-white">Market up</h5>
+            </div>
+            <div class="d-block d-md-flex">
+              <i class="mr-10 text-white fa fa-arrow-up"> </i>
+              <h5 class="text-white"><b>463</b></h5>
+            </div>
+          </div>
+          <div class="text-center" style="display: inline-block; width: 100%; height: 165px; vertical-align: top;">
+            <ngx-charts-line-chart [scheme]="lineChartSingleColorScheme" [results]="lineChartSingle" [gradient]="lineChartGradient" [xAxis]="lineChartShowXAxis" [yAxis]="lineChartShowYAxis" [legend]="lineChartShowLegend" [showXAxisLabel]="lineChartShowXAxisLabel" [showYAxisLabel]="lineChartShowYAxisLabel" [xAxisLabel]="lineChartXAxisLabel" [yAxisLabel]="lineChartYAxisLabel" [autoScale]="lineChartAutoScale" (select)="onSelect($event)">
+            </ngx-charts-line-chart>
+          </div>
+        </div>
+        <div class="p-3 bg-white">
+          <div class="row">
+            <div class="col-sm-6 col-6 align-self-center">
+              <h5>Site Visits Growth</h5>
+              <span class="text-danger">6592</span>
+            </div>
+            <div class="col-sm-6 col-6 align-self-center text-right">
+              <canvas baseChart class="round-chart mb-0" width="200" [data]="SVdoughnutChartData" [labels]="SVdoughnutChartLabels" [options]="SVdoughnutChartOptions" [chartType]="SVdoughnutChartType" [colors]="SVdoughnutChartColors1" [legend]="false" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-md-6 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body p-0">
+        <div class="bg-danger">
+          <div class="d-block d-md-flex justify-content-between p-3">
+            <div class="d-block">
+              <h5 class="text-white">Market down </h5>
+            </div>
+            <div class="d-block d-md-flex">
+              <i class="mr-10 text-white fa fa-arrow-down"> </i>
+              <h5 class="text-white"><b>466</b></h5>
+            </div>
+          </div>
+          <div id="sparkline8" class="text-center" style="display: inline-block; width: 100%; height: 165px; vertical-align: top;">
+            <ngx-charts-area-chart [scheme]="areaChartColorScheme1" [results]="lineChartSingle" [gradient]="areaChartGradient" [xAxis]="areaChartShowXAxis" [yAxis]="areaChartShowYAxis" [legend]="areaChartShowLegend" [showXAxisLabel]="areaChartShowXAxisLabel" [showYAxisLabel]="areaChartShowYAxisLabel" [xAxisLabel]="areaChartXAxisLabel" [yAxisLabel]="areaChartYAxisLabel" [autoScale]="areaChartAutoScale" (select)="onAreaChartSelect($event)">
+            </ngx-charts-area-chart>
+          </div>
+        </div>
+        <div class="p-3 bg-white">
+          <div class="row">
+            <div class="col-sm-6 col-6 align-self-center">
+              <h5>Site Visits Growth</h5>
+              <span class="text-info">6592</span>
+            </div>
+            <div class="col-sm-6 col-6 align-self-center text-right">
+              <canvas baseChart class="round-chart mb-0" width="200" [data]="SVdoughnutChartData" [labels]="SVdoughnutChartLabels" [options]="SVdoughnutChartOptions" [chartType]="SVdoughnutChartType" [colors]="SVdoughnutChartColors" [legend]="false" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-md-6 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body p-0">
+        <div class="bg-warning">
+          <div class="d-block d-md-flex justify-content-between p-3">
+            <div class="d-block">
+              <h5 class="text-white">Total revenue</h5>
+            </div>
+            <div class="d-block d-md-flex">
+              <h5 class="text-white"><b>$ 657</b></h5>
+            </div>
+          </div>
+          <div id="sparkline9" class="text-center" style="display: inline-block; width: 100%; height: 165px; vertical-align: top;">
+            <canvas baseChart class="chart" [datasets]="barChartData1" [labels]="barChartLabels1" [options]="barChartOptions" [colors]="barChartColors1" [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+        <div class="p-3 bg-white">
+          <div class="row">
+            <div class="col-sm-6 col-6 align-self-center">
+              <h5>Percentage in</h5>
+              <span class="text-warning">6592</span>
+            </div>
+            <div class="col-sm-6 col-6 align-self-center text-right">
+              <canvas baseChart class="round-chart mb-0" width="200" [data]="SVdoughnutChartData" [labels]="SVdoughnutChartLabels" [options]="SVdoughnutChartOptions" [chartType]="SVdoughnutChartType" [colors]="SVdoughnutChartColors3" [legend]="false" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-md-6 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body p-0">
+        <div class="bg-dark">
+          <div class="d-block d-md-flex justify-content-between p-3">
+            <div class="d-block">
+              <h5 class="text-white">Customer feedback</h5>
+            </div>
+            <div class="d-block d-md-flex">
+              <h5 class="text-white"><b>789</b></h5>
+            </div>
+          </div>
+          <div id="sparkline10" class="text-center" style="height: 165px;">
+            <canvas baseChart class="chart" [datasets]="barChartData2" [labels]="barChartLabels1" [options]="barChartOptions" [colors]="barChartColors2" [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+        <div class="p-3 bg-white">
+          <div class="row">
+            <div class="col-sm-6 col-6 align-self-center">
+              <h5>New user</h5> Monthly user: <span class="text-success"> 6592</span>
+            </div>
+            <div class="col-sm-6 col-6 align-self-center text-right">
+              <canvas baseChart class="round-chart mb-0" width="200" [data]="SVdoughnutChartData" [labels]="SVdoughnutChartLabels" [options]="SVdoughnutChartOptions" [chartType]="SVdoughnutChartType" [colors]="SVdoughnutChartColors2" [legend]="false" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xl-4 mb-30">
+    <div class="card card-statistics text-center h-100">
+      <div class="bg-dark pb-15 pt-15">
+        <p class="mb-10 today-date text-white">6/13/2018</p>
+        <h4 class="mb-0 text-white">California, Usa</h4>
+      </div>
+      <div class="card-body">
+        <div class="weather-icon py-3 text-warning"> <i class="wi wi-sunset"></i> </div>
+        <h2 class="mt-20">26° C</h2>
+        <p class="today-day">Monday</p>
+        <div class="divider mt-30 mb-30"></div>
+        <div class="row no-gutters">
+          <div class="col-6 col-md-3 col-sm-6">
+            <div class="weather-icon mb-20 text-dark"> <i class="wi wi-night-alt-partly-cloudy"></i> </div>
+          </div>
+          <div class="col-6 col-md-3 col-sm-6">
+            <div class="weather-icon mb-20 text-danger"> <i class="wi wi-thunderstorm"></i> </div>
+          </div>
+          <div class="col-6 col-md-3 col-sm-6">
+            <div class="weather-icon mb-20 text-info"> <i class="wi wi-snow"></i> </div>
+          </div>
+          <div class="col-6 col-md-3 col-sm-6">
+            <div class="weather-icon mb-20 text-success"> <i class="wi wi-rain"></i> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-8 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body">
+        <h5 class="card-title pb-0 border-0">Members Profiles </h5>
+        <div class="table-responsive">
+          <table class="table center-aligned-table mb-0">
+            <thead>
+              <tr class="text-dark">
+                <th>Member</th>
+                <th>Name</th>
+                <th>Earnings</th>
+                <th>Sales</th>
+                <th>Reviews </th>
+                <th>Progress </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> <img class="img-fluid avatar-small" src="assets/images/team/05.jpg" alt=""> </td>
+                <td>Iphone</td>
+                <td class="text-info">$520</td>
+                <td>250</td>
+                <td>
+                  <ul class="list-unstyled">
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="progress progress-small mt-2">
+                    <div class="skill2-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td> <img class="img-fluid avatar-small" src="assets/images/team/06.jpg" alt=""> </td>
+                <td>Galaxy S8</td>
+                <td class="text-warning">$340</td>
+                <td>100</td>
+                <td>
+                  <ul class="list-unstyled">
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="progress progress-small mt-2">
+                    <div class="skill2-bar bg-warning" role="progressbar" style="width: 64%" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td> <img class="img-fluid avatar-small" src="assets/images/team/07.jpg" alt=""> </td>
+                <td>Amazon Echo</td>
+                <td class="text-danger">$50</td>
+                <td>50</td>
+                <td>
+                  <ul class="list-unstyled">
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="progress progress-small mt-2">
+                    <div class="skill2-bar bg-danger" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td> <img class="img-fluid avatar-small" src="assets/images/team/08.jpg" alt=""> </td>
+                <td>Google Pixel</td>
+                <td class="text-success">$230</td>
+                <td>80</td>
+                <td>
+                  <ul class="list-unstyled">
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="progress progress-small mt-2">
+                    <div class="skill2-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td> <img class="img-fluid avatar-small" src="assets/images/team/09.jpg" alt=""> </td>
+                <td>Mac Mini</td>
+                <td class="text-dark">$1020</td>
+                <td>54</td>
+                <td>
+                  <ul class="list-unstyled">
+                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="progress progress-small mt-2">
+                    <div class="skill2-bar bg-dark" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xl-4 mb-30">
+    <div class="card card-statistics">
+      <div class="card-body">
+        <h5 class="card-title">To Do List </h5>
+        <!-- action group -->
+        <div class="btn-group info-drop" id="wrapDiv1">
+          <button type="button" class="dropdown-toggle-split text-muted" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="OpenMenu('submenu1','wrapDiv1')"><i class="ti-more"></i></button>
+          <div class="dropdown-menu" id="submenu1">
+            <a class="dropdown-item" href="javascript:void(0);"><i class="text-primary ti-files"></i> Add new</a>
+            <a class="dropdown-item" href="javascript:void(0);"><i class="text-dark ti-pencil-alt"></i> Edit task</a>
+            <a class="dropdown-item" href="javascript:void(0);"><i class="text-primary ti-user"></i> Assign to other</a>
+            <a class="dropdown-item" href="javascript:void(0);"><i class="text-success ti-thumb-up"></i> All Done</a>
+          </div>
+        </div>
+        <div class="scrollbar max-h-350" malihu-scrollbar [scrollbarOptions]="scrollbarY">
+          <ul class="list-unstyled to-do">
+            <li>
+              <div class="remember-checkbox mb-20">
+                <input type="checkbox" class="form-control" name="one" id="one">
+                <label for="one"> Prepare Docs For today's Presentation</label>
+              </div>
+            </li>
+            <li>
+              <div class="remember-checkbox mb-20">
+                <input type="checkbox" class="form-control" name="two" id="two">
+                <label for="two">Financial Report Discussion with team <span class="badge badge-success">Today</span>  </label>
+              </div>
+            </li>
+            <li>
+              <div class="remember-checkbox mb-20">
+                <input type="checkbox" class="form-control" name="three" id="three">
+                <label for="three"> 5 new tickets support</label>
+              </div>
+            </li>
+            <li>
+              <div class="remember-checkbox mb-20">
+                <input type="checkbox" class="form-control" name="four" id="four">
+                <label for="four"> Weekly project plan  <span class="badge badge-warning">Saturday</span> </label>
+              </div>
+            </li>
+            <li>
+              <div class="remember-checkbox mb-20">
+                <input type="checkbox" class="form-control" name="five" id="five">
+                <label for="five"> Revenue generation and distribution </label>
+              </div>
+            </li>
+            <li>
+              <div class="remember-checkbox mb-20">
+                <input type="checkbox" class="form-control" name="six" id="six">
+                <label for="six"> Create webmin's offline documentation <span class="badge badge-info">Tomorrow</span> </label>
+              </div>
+            </li>
+            <li>
+              <div class="remember-checkbox mb-20">
+                <input type="checkbox" class="form-control" name="sevan" id="sevan">
+                <label for="sevan"> 5 new tickets support <span class="badge badge-success">Today</span>  </label>
+              </div>
+            </li>
+            <li>
+              <div class="remember-checkbox mb-20">
+                <input type="checkbox" class="form-control" name="eight" id="eight">
+                <label for="eight"> New support forum developing</label>
+              </div>
+            </li>
+            <li>
+              <div class="remember-checkbox mb-20">
+                <input type="checkbox" class="form-control" name="nine" id="nine">
+                <label for="nine"> Apply leave for wedding <span class="badge badge-warning">5 week</span> </label>
+              </div>
+            </li>
+            <li>
+              <div class="remember-checkbox">
+                <input type="checkbox" class="form-control" name="ten" id="ten">
+                <label for="ten"> Pre-purchase FAQs content </label>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 mb-30">
+    <div class="card card-statistics">
+      <div class="card-body">
+        <h5 class="card-title">Messages </h5>
+        <!-- action group -->
+        <div class="btn-group info-drop" id="wrapDiv2">
+          <button type="button" class="dropdown-toggle-split text-muted" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="OpenMenu('submenu2','wrapDiv2')"><i class="ti-more"></i></button>
+          <div class="dropdown-menu" id="submenu2">
+            <a class="dropdown-item" href="javascript:void(0);"><i class="text-success ti-thumb-up"></i> Mark As Read</a>
+            <a class="dropdown-item" href="javascript:void(0);"><i class="text-danger ti-trash"></i> Delete all</a>
+          </div>
+        </div>
+        <div class="scrollbar  max-h-350" malihu-scrollbar [scrollbarOptions]="scrollbarY">
+          <ul class="list-unstyled">
+            <li class="mb-30">
+              <div class="media">
+                <div class="position-relative">
+                  <img class="img-fluid mr-15 avatar-small" src="assets/images/team/01.jpg" alt="">
+                  <i class="avatar-online bg-success"></i>
+                </div>
+                <div class="media-body">
+                  <h6 class="mt-0">Martin smith <small class="float-right">6 days ago</small></h6>
+                  <p>Create tailor-cut websites with the exclusive</p>
+                </div>
+              </div>
+            </li>
+            <li class="mb-30">
+              <div class="media">
+                <div class="position-relative">
+                  <img class="img-fluid mr-15 avatar-small" src="assets/images/team/02.jpg" alt="">
+                  <i class="avatar-online bg-success"></i>
+                </div>
+                <div class="media-body">
+                  <h6 class="mt-0"> Paul Flavius  <small class="float-right">6 days ago</small></h6>
+                  <p>Create tailor-cut websites with the exclusive</p>
+                </div>
+              </div>
+            </li>
+            <li class="mb-30">
+              <div class="media">
+                <div class="position-relative">
+                  <img class="img-fluid mr-15 avatar-small" src="assets/images/team/03.jpg" alt="">
+                </div>
+                <div class="media-body">
+                  <h6 class="mt-0">Anne Smith <small class="float-right">6 days ago</small></h6>
+                  <p>Create tailor-cut websites with the exclusive</p>
+                </div>
+              </div>
+            </li>
+            <li class="mb-30">
+              <div class="media">
+                <div class="position-relative">
+                  <img class="img-fluid mr-15 avatar-small" src="assets/images/team/04.jpg" alt="">
+                  <i class="avatar-online bg-success"></i>
+                </div>
+                <div class="media-body">
+                  <h6 class="mt-0">Sara Lisbon <small class="float-right">6 days ago</small></h6>
+                  <p>Create tailor-cut websites with the exclusive</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="media">
+                <div class="position-relative">
+                  <img class="img-fluid mr-15 avatar-small" src="assets/images/team/05.jpg" alt="">
+                </div>
+                <div class="media-body">
+                  <h6 class="mt-0"> Paul Flavius <small class="float-right">6 days ago</small></h6>
+                  <p>Create tailor-cut websites with the exclusive</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 mb-30">
+    <div class="card card-statistics">
+      <div class="card-body">
+        <h5 class="card-title pb-0 border-0">Last Transactions </h5>
+        <!-- action group -->
+        <div class="btn-group info-drop" id="wrapDiv3">
+          <button type="button" class="dropdown-toggle-split text-muted" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="OpenMenu('submenu3','wrapDiv3')"><i class="ti-more"></i></button>
+          <div class="dropdown-menu" id="submenu3">
+            <a class="dropdown-item" href="javascript:void(0);"><i class="text-primary ti-files"></i> View history</a>
+            <a class="dropdown-item" href="javascript:void(0);"><i class="text-success ti-thumb-up"></i> Profit</a>
+          </div>
+        </div>
+        <div class="scrollbar max-h-350" malihu-scrollbar [scrollbarOptions]="scrollbarY">
+          <div class="table-responsive">
+            <table class="table center-aligned-table">
+              <tbody>
+                <tr>
+                  <td><i class="fa fa-circle text-success"></i></td>
+                  <td>Advertising</td>
+                  <td>12 Jan 2017</td>
+                  <td class="text-success">+$230</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-circle text-info"></i></td>
+                  <td>Support licence</td>
+                  <td>15 Jan 2017</td>
+                  <td class="text-danger">-$430</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-circle text-warning"></i></td>
+                  <td>Extended licence</td>
+                  <td>10 Mar 2017</td>
+                  <td class="text-success">+$140</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-circle text-danger"></i></td>
+                  <td>Advertising</td>
+                  <td>12 Mar 2017</td>
+                  <td class="text-danger">-$230</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-circle text-dark"></i></td>
+                  <td>New plugins added</td>
+                  <td>14 May 2017</td>
+                  <td class="text-success">+$162</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-circle text-info"></i></td>
+                  <td>Google Inc.</td>
+                  <td>20 May 2017</td>
+                  <td class="text-success">+$561</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-circle text-success"></i></td>
+                  <td>Facebook Ad</td>
+                  <td>30 Jun 2017</td>
+                  <td class="text-success">+$566</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-circle text-warning"></i></td>
+                  <td>New sale</td>
+                  <td>25 Mar 2017</td>
+                  <td class="text-success">+$546</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-circle text-danger"></i></td>
+                  <td>Advertising</td>
+                  <td>10 Oug 2017</td>
+                  <td class="text-danger">-$326</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="calendar-main mb-30">
+  <div class="row">
+    <div class="col-lg-12">
+      <ng-template #modalContent let-close="close">
+        <div class="modal-header">
+          <h5 class="modal-title">Event action occurred</h5>
+          <button type="button" class="close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+            Action:
+            <pre>{{ modalData?.action }}</pre>
+          </div>
+          <div>
+            Event:
+            <pre>{{ modalData?.event | json }}</pre>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" (click)="close()">OK</button>
+        </div>
+      </ng-template>
+      <div class="row mb-3">
+        <div class="col-md-4 text-left">
+          <div class="btn-group">
+            <div class="btn btn-success" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
+              Previous
+            </div>
+            <div class="btn btn-success" mwlCalendarToday [(viewDate)]="viewDate">
+              Today
+            </div>
+            <div class="btn btn-success" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
+              Next
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <h4>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h4>
+        </div>
+        <div class="col-md-4 text-right">
+          <div class="btn-group">
+            <div class="btn btn-success" (click)="view = 'month'" [class.active]="view === 'month'">
+              Month
+            </div>
+            <div class="btn btn-success" (click)="view = 'week'" [class.active]="view === 'week'">
+              Week
+            </div>
+            <div class="btn btn-success" (click)="view = 'day'" [class.active]="view === 'day'">
+              Day
+            </div>
+          </div>
+        </div>
+      </div>
+      <div [ngSwitch]="view">
+        <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+        </mwl-calendar-month-view>
+        <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+        </mwl-calendar-week-view>
+        <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+        </mwl-calendar-day-view>
+      </div>
+    </div>
+  </div>
+</div>

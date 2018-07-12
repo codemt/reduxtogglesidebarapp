@@ -1,0 +1,278 @@
+﻿<div class="page-title">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="mb-0"> Dropdown</h4>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb pt-0 float-left float-sm-right ">
+        <li class="breadcrumb-item"><a href="javascript:void(0);" class="default-color">Home</a></li>
+        <li class="breadcrumb-item active">Dropdown </li>
+      </ol>
+    </div>
+  </div>
+</div>
+<!-- main body -->
+<div class="row">
+  <div class="col-xl-6 mb-30">
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Dropdown icon</h5>
+        <div class="dropdown-icon clearfix d-block position-relative pb-50">
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="btn-group info-drop" id="wrapDiv1">
+                <button type="button" class="dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="OpenMenu('submenu1','wrapDiv1')"><i class="ti-more"></i></button>
+                <div class="dropdown-menu" id="submenu1">
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="text-primary ti-files"></i> Add task</a>
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="text-dark ti-pencil-alt"></i> Edit Profile</a>
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="text-success ti-user"></i> View Profile</a>
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="text-secondary ti-info"></i> Contact Info</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="btn-group info-drop info-drop-box" id="wrapDiv2">
+                <button type="button" class="dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="OpenMenu1('submenu2','wrapDiv2')"><i class="ti-more-alt"></i></button>
+                <div class="dropdown-menu" id="submenu2">
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="text-primary ti-files"></i> Add task</a>
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="text-dark ti-pencil-alt"></i> Edit Profile</a>
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="text-success ti-user"></i> View Profile</a>
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="text-secondary ti-info"></i> Contact Info</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="btn-group info-drop info-drop-border" id="wrapDiv3">
+                <button type="button" class="dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="OpenMenu('submenu3','wrapDiv3')"><i class="fa fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu" id="submenu3">
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="text-primary ti-files"></i> Add task</a>
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="text-dark ti-pencil-alt"></i> Edit Profile</a>
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="text-success ti-user"></i> View Profile</a>
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="text-secondary ti-info"></i> Contact Info</a>
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Single button dropdowns</h5>
+        <div class="d-block" ngbDropdown #myDrop="ngbDropdown">
+          <button class="btn btn-secondary" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Dropdown button</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card card-statistics">
+      <div class="card-body">
+        <h5 class="card-title"> button variant dropdowns</h5>
+        <div class="btn-group mb-1" ngbDropdown #myDrop1="ngbDropdown">
+          <button class="btn btn-primary" id="dropdownManual1" ngbDropdownAnchor (focus)="myDrop1.open()">Primary</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual1">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+        <div class="btn-group mb-1" ngbDropdown #myDrop2="ngbDropdown">
+          <button class="btn btn-secondary" id="dropdownManual2" ngbDropdownAnchor (focus)="myDrop2.open()">Secondary</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual2">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+        <div class="btn-group mb-1" ngbDropdown #myDrop3="ngbDropdown">
+          <button class="btn btn-success" id="dropdownManual3" ngbDropdownAnchor (focus)="myDrop3.open()">Success</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual3">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+        <div class="btn-group mb-1" ngbDropdown #myDrop4="ngbDropdown">
+          <button class="btn btn-info" id="dropdownManual4" ngbDropdownAnchor (focus)="myDrop4.open()">Info</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual4">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+        <div class="btn-group mb-1" ngbDropdown #myDrop5="ngbDropdown">
+          <button class="btn btn-warning" id="dropdownManual5" ngbDropdownAnchor (focus)="myDrop5.open()">Warning</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual5">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+        <div class="btn-group mb-1" ngbDropdown #myDrop6="ngbDropdown">
+          <button class="btn btn-danger" id="dropdownManual6" ngbDropdownAnchor (focus)="myDrop6.open()">Danger</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual6">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6 mb-30">
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Split button dropdowns</h5>
+        <div class="btn-group mb-1" ngbDropdown #myDrop7="ngbDropdown">
+          <button type="button" class="btn btn-primary">Primary</button>
+          <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" id="dropdownManual7" ngbDropdownAnchor (focus)="myDrop7.open()">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual7">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+        <div class="btn-group mb-1" ngbDropdown #myDrop8="ngbDropdown">
+          <button type="button" class="btn btn-secondary">Secondary</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownManual8" ngbDropdownAnchor (focus)="myDrop8.open()">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual8">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+        <div class="btn-group mb-1" ngbDropdown #myDrop9="ngbDropdown">
+          <button type="button" class="btn btn-success">Success</button>
+          <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" id="dropdownManual9" ngbDropdownAnchor (focus)="myDrop9.open()">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual9">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+        <div class="btn-group mb-1" ngbDropdown #myDrop10="ngbDropdown">
+          <button type="button" class="btn btn-info">Info</button>
+          <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" id="dropdownManual10" ngbDropdownAnchor (focus)="myDrop10.open()">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual10">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+        <div class="btn-group mb-1" ngbDropdown #myDrop11="ngbDropdown">
+          <button type="button" class="btn btn-warning">Warning</button>
+          <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" id="dropdownManual11" ngbDropdownAnchor (focus)="myDrop11.open()">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual11">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+        <div class="btn-group mb-1" ngbDropdown #myDrop12="ngbDropdown">
+          <button type="button" class="btn btn-danger">Danger</button>
+          <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" id="dropdownManual12" ngbDropdownAnchor (focus)="myDrop12.open()">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual12">
+            <button class="dropdown-item">Action</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card card-statistics mb-30">
+      <div class="card-body">
+        <h5 class="card-title">Sizing</h5>
+        <div class="btn-toolbar" role="toolbar">
+          <div class="btn-group mb-3" ngbDropdown #myDrop13="ngbDropdown">
+            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownManual13" ngbDropdownAnchor (focus)="myDrop13.open()">
+              Large button
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownManual13">
+              <button class="dropdown-item">Action</button>
+              <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button>
+            </div>
+          </div>
+          <div class="btn-group mb-3 ml-1" ngbDropdown #myDrop14="ngbDropdown">
+            <button type="button" class="btn btn-lg btn-secondary">Large split button</button>
+            <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split"  id="dropdownManual14" ngbDropdownAnchor (focus)="myDrop14.open()">
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownManual14">
+              <button class="dropdown-item">Action</button>
+              <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button>
+            </div>
+          </div>
+        </div>
+        <div class="btn-toolbar" role="toolbar">
+          <div class="btn-group mb-1" ngbDropdown #myDrop15="ngbDropdown">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownManual15" ngbDropdownAnchor (focus)="myDrop15.open()">
+              Small button
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownManual15">
+              <button class="dropdown-item">Action</button>
+              <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button>
+            </div>
+          </div>
+          <div class="btn-group ml-1" ngbDropdown #myDrop16="ngbDropdown">
+            <button type="button" class="btn btn-sm btn-secondary">Small split button</button>
+            <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownManual16" ngbDropdownAnchor (focus)="myDrop16.open()">
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownManual16">
+              <button class="dropdown-item">Action</button>
+              <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card card-statistics">
+      <div class="card-body">
+        <h5 class="card-title">Dropup variation</h5>
+        <div class="btn-group dropup mb-1" ngbDropdown placement="top-left" #myDrop17="ngbDropdown">
+          <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownManual17" ngbDropdownAnchor (focus)="myDrop17.open()">
+            Dropup
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual17">
+              <button class="dropdown-item">Action</button>
+              <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button>
+            </div>
+        </div>
+        <div class="btn-group dropup mb-1" ngbDropdown placement="top-left" #myDrop18="ngbDropdown">
+          <button type="button" class="btn btn-secondary">
+            Split dropup
+          </button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownManual18" ngbDropdownAnchor (focus)="myDrop18.open()">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual18">
+              <button class="dropdown-item">Action</button>
+              <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

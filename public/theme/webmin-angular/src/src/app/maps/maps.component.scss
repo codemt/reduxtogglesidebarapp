@@ -1,0 +1,32 @@
+/deep/ #vector-map {
+    height: 420px;
+    width: 100%;
+    display: block;
+}
+/deep/ .options {
+    padding: 20px;
+    background-color: rgba(191, 191, 191, 0.15);
+    margin-top: 20px;
+}
+/deep/ .caption {
+    font-size: 18px;
+    font-weight: 500;
+}
+/deep/ .option {
+    margin-top: 10px;
+}
+/deep/ .option > span {
+    width: 140px;
+    display: inline-block;
+}
+/deep/ .option > .dx-widget {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+:host /deep/ #vector-map rect {
+    stroke:#ffffff;
+}
+:host /deep/ #vector-map .dxm-layer path {
+    fill: rgb(215, 219, 222);
+}

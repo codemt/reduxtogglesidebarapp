@@ -1,0 +1,52 @@
+﻿<div class="wrapper">
+
+  <!--=================================
+   preloader -->
+
+  <!--<div id="pre-loader">
+    <img src="assets/images/pre-loader/loader-01.svg" alt="">
+  </div>-->
+
+  <!--=================================
+   preloader -->
+  <!--=================================
+   lockscreen-->
+
+  <section class="lockscreen height-100vh page-section-ptb parallax" style="background: url(assets/images/login-bg.jpg);">
+    <div class="container h-100">
+      <div class="row justify-content-center h-100">
+        <div class="col-lg-5 col-md-8 col-sm-8 align-self-center">
+          <div class="card text-center pb-40 bg-white pl-5 pr-5 clearfix">
+            <div class="user-info">
+              <img src="assets/images/profile-avatar.jpg" alt="">
+              <h6 class="name">Michael Bean</h6>
+              <span class="mt-1"><i class="fa fa-lock"></i> Locked</span>
+            </div>
+            <form novalidate="" [formGroup]="lockScreenForm" id="lockScreenForm">
+            <div class="form-group mb-20">
+              <input id="password" class="Password form-control" type="password" placeholder="Enter Password" name="password" formControlName="password">
+              <div *ngIf="lockScreenForm.controls['password'].touched && !lockScreenForm.controls['password'].valid">
+                        <em class="error help-block" *ngIf="lockScreenForm.controls['password'].hasError('required') ">
+                             Please provide a password
+                        </em>
+                        <em class="error help-block" *ngIf="lockScreenForm.controls['password'].hasError('minlength') " >
+                             Your password must be at least 5 characters long
+                        </em>
+                    </div>
+              <div class="clear">
+                <button type="submit" title="Unlock Account" name="submitbtn" class="button lockscreen-button" (click)="onSubmit()"> <i class="fa fa-unlock"></i> </button>
+              </div>
+            </div>
+            </form>
+            <p class="mt-20 mb-0">Enter your password to retrieve your session</p>
+            <p class="mt-20 mb-0">Not Michael Bean? <a routerLink="admin-login">Click here</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--=================================
+   lockscreen-->
+
+</div>

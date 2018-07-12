@@ -1,0 +1,165 @@
+﻿<div class="page-title">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="mb-0"> Data Table </h4>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb pt-0 float-left float-sm-right ">
+        <li class="breadcrumb-item"><a href="javascript:void(0);" class="default-color">Home</a></li>
+        <li class="breadcrumb-item active">Data Table </li>
+      </ol>
+    </div>
+  </div>
+</div>
+<!-- main body -->
+<div class="row">
+  <div class="col-xl-12 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body">
+        <h5 class="card-title mb-0">Basic DataTable</h5>
+        <div class="table-responsive">
+          <ngx-datatable class="bootstrap" [rows]="rows" [loadingIndicator]="loadingIndicator" [columns]="columns" [columnMode]="'force'"
+                         [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [reorderable]="reorderable">
+          </ngx-datatable>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body">
+        <h5 class="card-title">Editing Content</h5>
+        <p class="content-sub-header">Double click on any content to edit that section.</p>
+        <div class="table-responsive">
+
+          <ngx-datatable #mydatatable class="bootstrap" [headerHeight]="50" [limit]="5" [columnMode]="'force'" [footerHeight]="50"
+                         [rowHeight]="'auto'" [rows]="rows">
+            <ngx-datatable-column name="name">
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                <span title="Double click to edit" (dblclick)="editing[rowIndex + '-name'] = true" *ngIf="!editing[rowIndex + '-name']">
+                  {{value}}
+                </span>
+                <input autofocus (blur)="updateValue($event, 'name', rowIndex)" *ngIf="editing[rowIndex+ '-name']" type="text" [value]="value" />
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Gender">
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                <span title="Double click to edit" (dblclick)="editing[rowIndex + '-gender'] = true" *ngIf="!editing[rowIndex + '-gender']">
+                  {{value}}
+                </span>
+                <select *ngIf="editing[rowIndex + '-gender']" (change)="updateValue($event, 'gender', rowIndex)" [value]="value">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Age">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                {{value}}
+              </ng-template>
+            </ngx-datatable-column>
+          </ngx-datatable>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body">
+        <h5 class="card-title">Filter Option</h5>
+        <div class="table-responsive ">
+          <div class="form-group">
+            <input type='text' class="form-control col-md-4" placeholder='Type to filter the name column...' (keyup)='updateFilter($event)' />
+          </div>
+          <ngx-datatable #table class='bootstrap' [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+                         [rowHeight]="'auto'" [limit]="10" [rows]='filterrows'>
+          </ngx-datatable>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body">
+        <h5 class="card-title mb-0">Fullscreen DataTable</h5>
+        <ngx-datatable class="bootstrap fullscreen" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="0"
+                       [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+          <ngx-datatable-column name="Id" [width]="80"></ngx-datatable-column>
+          <ngx-datatable-column name="Name" [width]="300"></ngx-datatable-column>
+          <ngx-datatable-column name="Gender"></ngx-datatable-column>
+          <ngx-datatable-column name="Age"></ngx-datatable-column>
+          <ngx-datatable-column name="City" [width]="300" prop="address.city"></ngx-datatable-column>
+          <ngx-datatable-column name="State" [width]="300" prop="address.state"></ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body">
+        <h5 class="card-title mb-0">Paging</h5>
+        <ngx-datatable class="bootstrap" [rows]="rows" [columns]="[{name:'Name'},{name:'Gender'},{name:'Company'}]" [columnMode]="'force'"
+                       [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [limit]="10">
+        </ngx-datatable>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body">
+        <h5 class="card-title mb-0">Pinning DataTable</h5>
+        <ngx-datatable class="bootstrap" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50" [scrollbarV]="true"
+                       [scrollbarH]="true" [rows]="rows">
+          <ngx-datatable-column name="Name" [width]="300" [frozenLeft]="true">
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Gender">
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Age">
+          </ngx-datatable-column>
+          <ngx-datatable-column name="City" [width]="150" prop="address.city">
+          </ngx-datatable-column>
+          <ngx-datatable-column name="State" [width]="300" prop="address.state">
+          </ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body">
+        <h5 class="card-title mb-0">Selection DataTable</h5>
+       
+        <ngx-datatable class="bootstrap selection-cell" [rows]="selectrows" [columnMode]="'force'" [columns]="columns" [headerHeight]="50"
+                       [footerHeight]="50" [rowHeight]="50" [selected]="selected" [selectionType]="'cell'" (select)="onSelect($event)"
+                       (activate)="onActivate($event)">
+        </ngx-datatable>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="card-body">
+        <h5 class="card-title mb-0">Sorting DataTable</h5>
+        <ngx-datatable class="bootstrap" [rows]="sortrows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50"
+                       [scrollbarV]="true" [sorts]="[{prop: 'name', dir: 'desc'}]">
+          <ngx-datatable-column name="Company">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              {{row.company}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Name">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              {{row.name}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Gender">
+          </ngx-datatable-column>
+        </ngx-datatable>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>

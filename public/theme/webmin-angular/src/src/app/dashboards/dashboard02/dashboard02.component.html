@@ -1,0 +1,447 @@
+﻿<div class="page-title">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="mb-0"> Dashboard 02</h4>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
+        <li class="breadcrumb-item"><a href="javascript:void(0);" class="default-color">Home</a></li>
+        <li class="breadcrumb-item active">Dashboard 02</li>
+      </ol>
+    </div>
+  </div>
+</div>
+<!-- widgets -->
+<div class="row">
+  <div class="col-12 mb-30 ">
+    <div class="card card-statistics h-100">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-xl-4">
+            <h5 class="card-title">Yearly analytics </h5>
+            <div  style="height: 300px;">
+          <canvas baseChart class="chart" [datasets]="barChartData1" [labels]="barChartLabels1" [options]="barChartOptions" [colors]="barChartColors" [legend]="barChartLegend1"
+                  [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+        </div>
+          </div>
+          <div class="col-xl-4 mt-4 mt-xl-0">
+            <h5 class="card-title">Best selling items</h5>
+            <ul class="list-unstyled">
+              <li class="mb-20">
+                <div class="media">
+                  <div class="position-relative">
+                    <img class="img-fluid mr-15 avatar-small" src="assets/images/item/01.png" alt="">
+                  </div>
+                  <div class="media-body">
+                    <h6 class="mt-0 mb-0">Car dealer <span class="float-right text-danger"> 8,561</span>  </h6>
+                    <p>Automotive WordPress Theme </p>
+                  </div>
+                </div>
+                <div class="divider dotted mt-20"></div>
+              </li>
+              <li class="mb-20">
+                <div class="media">
+                  <div class="position-relative clearfix">
+                    <img class="img-fluid mr-15 avatar-small" src="assets/images/item/02.png" alt="">
+                  </div>
+                  <div class="media-body">
+                    <h6 class="mt-0 mb-0">Webster  <span class="float-right text-warning"> 6,213</span>  </h6>
+                    <p>Multi-purpose HTML5 Template </p>
+                  </div>
+                </div>
+                <div class="divider dotted mt-20"></div>
+              </li>
+              <li>
+                <div class="media">
+                  <div class="position-relative">
+                    <img class="img-fluid mr-15 avatar-small" src="assets/images/item/03.png" alt="">
+                  </div>
+                  <div class="media-body">
+                    <h6 class="mt-0 mb-0">The corps  <span class="float-right text-success"> 2,926</span>  </h6>
+                    <p> Multi-Purpose WordPress Theme </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xl-4 mt-4 mt-xl-0">
+            <div class="claerfix">
+              <h5 class="card-title">Revenue sources</h5>
+            </div>
+            <div class="row">
+              <div class="col-lg-7">
+                <div style="height: 260px;">
+          <canvas baseChart class="round-chart big-chart mb-0" [data]="doughnutChartData" [labels]="doughnutChartLabels" [options]="doughnutChartOptions" [chartType]="doughnutChartType" [colors]="doughnutChartColors" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+
+        </div>
+              </div>
+              <div class="col-lg-5">
+                <h3>$50,500 </h3>
+                <div class="row no-gutters">
+                  <div class="col-12 col-sm-4 col-md-4 col-lg-12 mt-30">
+                    <b>Member Commission </b>
+                    <p class="text-success">$4,564</p>
+                  </div>
+                  <div class="col-12 col-sm-4 col-md-4 col-lg-12 mt-30">
+                    <b>Product sales</b>
+                    <p class="text-info">$1,616</p>
+                  </div>
+                  <div class="col-12 col-sm-4 col-md-4 col-lg-12 mt-30">
+                    <b>Consulting</b>
+                    <p class="text-danger">$6,546</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-30">
+  <div class="col-12">
+    <div class="card card-statistics h-100">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-xl-7">
+            <div id="world-map-markers" style="height: 440px;">
+              <dx-vector-map id="vector-map" #vectorMap
+                             [bounds]="viewportData[0].coordinates"
+                             (onZoomFactorChanged)="zoomChanged($event)"
+                             (onCenterChanged)="centerChanged($event)">
+                <dxi-layer [dataSource]="worldMap"></dxi-layer>
+              </dx-vector-map>
+            </div>
+          </div>
+          <div class="col-xl-5">
+            <div class="active-user">
+              <div class="row">
+                <div class="col-md-4">
+                  <h5>Right now </h5>
+                  <span class="text-danger">9</span>
+                </div>
+                <div class="col-md-8">
+                  <h5>Active users on site</h5>
+                  <div class="clearfix">
+                    <p class="mb-10 float-left">Desktop </p>
+                    <p class="mb-10 float-right">Mobile</p>
+                  </div>
+                  <div class="progress progress-small">
+                    <div class="skill2-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="skill2-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive mb-10">
+              <table class="table center-aligned-table">
+                <tbody></tbody>
+                <thead>
+                  <tr class="text-dark">
+                    <th>No </th>
+                    <th>Contrary </th>
+                    <th>2016</th>
+                    <th>2017</th>
+                    <th>Change</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><i class="fa fa-circle text-success"></i></td>
+                    <td>USA</td>
+                    <td>2,009 </td>
+                    <td>5,230</td>
+                    <td>8.01% <i class="fa fa-level-up text-success"></i></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-circle text-info"></i></td>
+                    <td>India</td>
+                    <td>2,609</td>
+                    <td>2,430</td>
+                    <td>7.01% <i class="fa fa-level-down text-warning"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="scrollbar-x text-center">
+              <canvas baseChart class="chart" [datasets]="barChartData2" [labels]="barChartLabels" [options]="barChartOptions" [colors]="barChartColors2" [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xl-4 mb-30">
+    <div class="card h-100">
+      <div class="btn-group info-drop" id="wrapDiv2">
+        <button type="button" class="dropdown-toggle-split text-muted" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="OpenMenu('submenu2','wrapDiv2')"><i class="ti-more"></i></button>
+        <div class="dropdown-menu" id="submenu2">
+          <a class="dropdown-item" href="javascript:void(0);"><i class="text-primary ti-reload"></i>Refresh</a>
+          <a class="dropdown-item" href="javascript:void(0);"><i class="text-secondary ti-eye"></i>View all</a>
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Site Visits Growth </h5>
+        <div class="row">
+          <div class="col-6">
+            <h5 class="text-danger">Income</h5>
+            <p class="text-danger">+584</p>
+          </div>
+          <div class="col-6">
+            <h5 class="text-info">Outcome</h5>
+            <p class="text-info">-255</p>
+          </div>
+        </div>
+         <div style="height: 320px;">
+
+          <ngx-charts-line-chart [scheme]="lineChartColorScheme" [results]="lineChartMulti" [gradient]="lineChartGradient" [xAxis]="lineChartShowXAxis"
+                                 [yAxis]="lineChartShowYAxis" [legend]="lineChartShowLegend" [showXAxisLabel]="lineChartShowXAxisLabel"
+                                 [showYAxisLabel]="lineChartShowYAxisLabel" [xAxisLabel]="lineChartXAxisLabel" [yAxisLabel]="lineChartYAxisLabel"
+                                 [autoScale]="lineChartAutoScale" (select)="onSelect($event)" >
+          </ngx-charts-line-chart>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="btn-group info-drop" id="wrapDiv3">
+        <button type="button" class="dropdown-toggle-split text-muted" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="OpenMenu('submenu3','wrapDiv3')"><i class="ti-more"></i></button>
+        <div class="dropdown-menu" id="submenu3">
+          <a class="dropdown-item" href="javascript:void(0);"><i class="text-primary ti-reload"></i>Refresh</a>
+          <a class="dropdown-item" href="javascript:void(0);"><i class="text-secondary ti-eye"></i>View all</a>
+        </div>
+      </div>
+      <div class="card-body pb-150">
+        <h5 class="card-title">Customer Feedback</h5>
+        <div class="row mt-20">
+          <div class="col-md-6">
+            <div class="clearfix">
+              <p class="mb-10 float-left">Positive</p>
+              <i class="mb-10 text-success float-right fa fa-arrow-up"> </i>
+            </div>
+            <div class="progress progress-small">
+              <div class="skill2-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <h2 class="mt-10 text-success">8501</h2>
+          </div>
+          <div class="col-md-6">
+            <div class="clearfix">
+              <p class="mb-10 float-left">Negative</p>
+              <i class="mb-10 text-danger float-right fa fa-arrow-down"> </i>
+            </div>
+            <div class="progress progress-small">
+              <div class="skill2-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <h2 class="mt-10 text-danger">3251</h2>
+          </div>
+        </div>
+      </div>
+      <div class="chart-wrapper" style="width: 100%; margin: 0 auto; ">
+               <canvas height="240" baseChart class="chart" [datasets]="areaChartData" [labels]="areaChartLabels" [options]="areaChartOptions" [colors]="areaChartColors"
+                  [legend]="areaChartLegend" [chartType]="areaChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+            </div>
+    </div>
+  </div>
+  <div class="col-xl-4 mb-30">
+    <div class="card card-statistics h-100">
+      <div class="p-4 text-center bg-danger text-white">
+        <h5 class="mb-30 text-white">Sarah Lisbon</h5>
+        <!-- action group -->
+        <div class="btn-group info-drop" id="wrapDiv4">
+          <button type="button" class="dropdown-toggle-split text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="OpenMenu('submenu4','wrapDiv4')"><i class="ti-more"></i></button>
+          <div class="dropdown-menu" id="submenu4">
+            <a class="dropdown-item" href="javascript:void(0);"><i class="text-primary ti-files"></i> Add task</a>
+            <a class="dropdown-item" href="javascript:void(0);"><i class="text-dark ti-pencil-alt"></i> Edit Profile</a>
+            <a class="dropdown-item" href="javascript:void(0);"><i class="text-success ti-user"></i> View Profile</a>
+            <a class="dropdown-item" href="javascript:void(0);"><i class="text-secondary ti-info"></i> Contact Info</a>
+          </div>
+        </div>
+        <img class="img-fluid w-25 rounded-circle " src="assets/images/team/11.jpg" alt="">
+        <p class="mt-30 text-white">Carol J. Stephens 1635 Franklin Street Montgomery, AL 36104</p>
+        <div class="social-icons color-hover clearfix mt-20">
+          <ul>
+            <li class="social-rss"><a href="javascript:void(0);"><i class="fa fa-rss"></i></a></li>
+            <li class="social-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
+            <li class="social-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
+            <li class="social-vimeo"><a href="javascript:void(0);"><i class="fa fa-vimeo"></i></a></li>
+            <li class="social-youtube"><a href="javascript:void(0);"><i class="fa fa-youtube"></i></a></li>
+            <li class="social-instagram"><a href="javascript:void(0);"><i class="fa fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-body text-center">
+        <div class="row">
+          <div class="col-6 col-sm-4 xs-mb-10 md-mt-0 mt-20">
+            <b>Following</b>
+            <h4 class="mt-10">2,655 </h4>
+          </div>
+          <div class="col-6 col-sm-4 xs-mb-10 md-mt-0 mt-20">
+            <b>Followers </b>
+            <h4 class="mt-10">54k</h4>
+          </div>
+          <div class="col-6 col-sm-4 md-mt-0 mt-20">
+            <b>Post</b>
+            <h4 class="mt-10">602</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xl-4 mb-30">
+    <div class="card h-100">
+      <div class="card card-statistics h-100">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6 col-sm-4 xs-mb-20">
+              <h6>Total usage </h6>
+              <b class="text-info">21.05 GB</b>
+            </div>
+            <div class="col-6 col-sm-4 xs-mb-20">
+              <h6>Currently </h6>
+              <b class="text-danger">227.34 KB </b>
+            </div>
+            <div class="col-6 col-sm-4 xs-mb-20">
+              <h6>Average</h6>
+              <b class="text-warning">117.65 MB </b>
+            </div>
+          </div>
+          <div class="table-responsive">
+          <table class="table mt-30">
+            <tbody>
+              <tr>
+                <td>Iphone 7</td>
+                <td>192.168.0.5</td>
+                <td>227.34KB </td>
+              </tr>
+              <tr>
+                <td>Windows</td>
+                <td>192.168.0.4</td>
+                <td>128.62KB </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          <div style="height: 240px;">
+          <canvas baseChart class="chart" [data]="pieChartData" [labels]="pieChartLabels" [options]="pieChartOptions" [chartType]="pieChartType" (chartHover)="chartHovered($event)" [colors]="pieChartColors"
+                  (chartClick)="chartClicked($event)"></canvas>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-8 mb-30">
+    <div class="card card-statistics weather-box h-100">
+      <div class="bg-dark p-20">
+        <div class="row">
+          <div class="col-md-7">
+            <h3 class="text-white">New york USA</h3>
+            <h5 class="text-white d-block mt-10"><i class="ti-cloud mr-10"></i>  Sunny</h5>
+            <ul class="list-unstyled mt-10">
+              <li class="text-white list-inline-item pr-3 mt-10"> Wind: <span> 50 km/hr </span></li>
+              <li class="text-white list-inline-item pr-3 mt-10"> humidity : <span> 25% </span></li>
+              <li class="text-white list-inline-item mt-10"> Feels like: <span> 34° </span></li>
+            </ul>
+          </div>
+          <div class="col-md-5 text-left text-md-right sm-mt-20">
+            <h4 class="text-white">Currently</h4>
+            <h2 class="text-white mt-10 weather-degree"> <i class="fa fa-cloud text-info"></i> 24°</h2>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row pt-4 pb-4">
+          <div class="col-xl-2 col-md-4 col-6 text-center">
+            <h6 class="mb-15">Mon </h6>
+            <div class="weather-icon py-3 text-warning"> <i class="wi wi-day-cloudy-high"></i> </div>
+            <h4 class="mt-15">30°</h4>
+          </div>
+          <div class="col-xl-2 col-md-4 col-6 text-center">
+            <h6 class="mb-15">Tue </h6>
+            <div class="weather-icon py-3 text-danger"> <i class="wi wi-day-light-wind"></i> </div>
+            <h4 class="mt-15">31°</h4>
+          </div>
+          <div class="col-xl-2 col-md-4 col-6 text-center">
+            <h6 class="mb-15">Wed </h6>
+            <div class="weather-icon py-3 text-info"> <i class="wi wi-day-haze"></i> </div>
+            <h4 class="mt-15">29°</h4>
+          </div>
+          <div class="col-xl-2 col-md-4 col-6 text-center">
+            <h6 class="mb-15">Thu </h6>
+            <div class="weather-icon py-3 text-success"> <i class="wi wi-day-sleet"></i> </div>
+            <h4 class="mt-15">30°</h4>
+          </div>
+          <div class="col-xl-2 col-md-4 col-6 text-center">
+            <h6 class="mb-15">Sat </h6>
+            <div class="weather-icon py-3 text-dark"> <i class="wi wi-sleet"></i> </div>
+            <h4 class="mt-15">32°</h4>
+          </div>
+          <div class="col-xl-2 col-md-4 col-6 text-center">
+            <h6 class="mb-15">Sun </h6>
+            <div class="weather-icon py-3 text-secondary"> <i class="wi wi-sunset"></i> </div>
+            <h4 class="mt-15">34°</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xl-4 mb-30">
+    <div class="card card-statistics fb-bg h-100">
+      <div class="card-body">
+        <div class="clearfix">
+          <div class="float-left icon-box-fixed">
+            <h4 class="text-white">
+              <i class="fa fa-facebook highlight-icon" aria-hidden="true"></i>
+            </h4>
+          </div>
+          <div class="float-right">
+            <h4 class="text-white">11,543</h4>
+            <p class="card-text text-white">Likes </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 mb-30">
+    <div class="card card-statistics youtube-bg h-100">
+      <div class="card-body">
+        <div class="clearfix">
+          <div class="float-left icon-box-fixed">
+            <h4 class="text-white">
+              <i class="fa fa-youtube highlight-icon" aria-hidden="true"></i>
+            </h4>
+          </div>
+          <div class="float-right">
+            <h4 class="text-white">1,20,543</h4>
+            <p class="card-text text-white">Subscribers  </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 mb-30">
+    <div class="card card-statistics twitter-bg h-100">
+      <div class="card-body">
+        <div class="clearfix">
+          <div class="float-left icon-box-fixed">
+            <h4 class="text-white">
+              <i class="fa fa-twitter highlight-icon" aria-hidden="true"></i>
+            </h4>
+          </div>
+          <div class="float-right">
+            <h4 class="text-white">41,652</h4>
+            <p class="card-text text-white">Followers </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

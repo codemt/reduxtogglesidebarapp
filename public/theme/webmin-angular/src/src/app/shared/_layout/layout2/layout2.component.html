@@ -1,0 +1,320 @@
+﻿<div class="wrapper" [class.slide-menu]="isSlideMenu">
+
+  <!--=================================
+   preloader -->
+  <div id="pre-loader" *ngIf="_commondata.loader.value">
+      <img src="assets/images/pre-loader/loader-01.svg" alt="">
+    </div>
+  <!--=================================
+   preloader -->
+  <!--=================================
+   header start-->
+
+  <nav class="admin-header header-dark navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <!-- logo -->
+    <div class="text-left navbar-brand-wrapper">
+      <a class="navbar-brand brand-logo" href="javascript:void(0);"><img src="assets/images/logo-white.png" /></a>
+      <a class="navbar-brand brand-logo-mini" href="javascript:void(0);"><img src="assets/images/logo-icon-light.png" alt=""></a>
+    </div>
+    <!-- Top bar left -->
+    <ul class="nav navbar-nav mr-auto">
+      <li class="nav-item">
+        <a id="button-toggle" class="button-toggle-nav inline-block ml-20 pull-left" href="javascript:void(0);" (click)="toggleMenu()"><i class="zmdi zmdi-menu ti-align-right"></i></a>
+      </li>
+      <li class="nav-item">
+        <div class="search" [class.search-open]="isSearchActive">
+          <a class="search-btn not_click" href="javascript:void(0);" (click)="toggleSearch()"></a>
+          <div class="search-box not-click">
+            <input type="text" class="not-click form-control" placeholder="Search" value="" name="search">
+            <button class="search-button" type="submit"> <i class="fa fa-search not-click"></i></button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <!-- top bar right -->
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item dropdown ">
+        <a class="nav-link top-nav" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="ti-bell"></i>
+          <span class="badge badge-danger notification-status"> </span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-big dropdown-notifications">
+          <div class="dropdown-header notifications">
+            <strong>Notifications</strong>
+            <span class="badge badge-pill badge-warning">05</span>
+          </div>
+          <div class="dropdown-divider"></div>
+          <a href="javascript:void(0);" class="dropdown-item">New registered user <small class="float-right text-muted time">Just now</small> </a>
+          <a href="javascript:void(0);" class="dropdown-item">New invoice received <small class="float-right text-muted time">22 mins</small> </a>
+          <a href="javascript:void(0);" class="dropdown-item">Server error report<small class="float-right text-muted time">7 hrs</small> </a>
+          <a href="javascript:void(0);" class="dropdown-item">Database report<small class="float-right text-muted time">1 days</small> </a>
+          <a href="javascript:void(0);" class="dropdown-item">Order confirmation<small class="float-right text-muted time">2 days</small> </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown ">
+        <a class="nav-link top-nav" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="true"> <i class=" ti-view-grid"></i> </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-big">
+          <div class="dropdown-header">
+            <strong>Quick Links</strong>
+          </div>
+          <div class="dropdown-divider"></div>
+          <div class="nav-grid">
+            <a href="javascript:void(0);" class="nav-grid-item"><i class="ti-files text-primary"></i><h5>New Task</h5></a>
+            <a href="javascript:void(0);" class="nav-grid-item"><i class="ti-check-box text-success"></i><h5>Assign Task</h5></a>
+          </div>
+          <div class="nav-grid">
+            <a href="javascript:void(0);" class="nav-grid-item"><i class="ti-pencil-alt text-warning"></i><h5>Add Orders</h5></a>
+            <a href="javascript:void(0);" class="nav-grid-item"><i class="ti-truck text-danger "></i><h5>New Orders</h5></a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item dropdown mr-30">
+        <a class="nav-link nav-pill user-avatar" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">
+          <img src="assets/images/profile-avatar.jpg" alt="avatar">
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <div class="dropdown-header">
+            <div class="media">
+              <div class="media-body">
+                <h5 class="mt-0 mb-0">Michael Bean</h5>
+                <span>michael-bean@mail.com</span>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="javascript:void(0);"><i class="text-secondary ti-reload"></i>Activity</a>
+          <a class="dropdown-item" href="javascript:void(0);"><i class="text-success ti-email"></i>Messages</a>
+          <a class="dropdown-item" href="javascript:void(0);"><i class="text-warning ti-user"></i>Profile</a>
+          <a class="dropdown-item" href="javascript:void(0);"><i class="text-dark ti-layers-alt"></i>Projects <span class="badge badge-info">6</span> </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="javascript:void(0);"><i class="text-info ti-settings"></i>Settings</a>
+          <a class="dropdown-item" href="javascript:void(0);"><i class="text-danger ti-unlock"></i>Logout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!--=================================
+   header End-->
+  <!--=================================
+   Main content -->
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Left Sidebar start-->
+      <div class="side-menu-fixed light-side-menu">
+        <div class="scrollbar side-menu-bg" malihu-scrollbar [scrollbarOptions]="scrollbarOptions">
+          <ul class="nav navbar-nav side-menu">
+            <!-- menu item Dashboard-->
+            <li>
+              <a href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard" (click)="expandCollpse('dashboard')">
+                <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">Dashboard</span></div>
+                <div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div>
+              </a>
+              <ul id="dashboard" class="collapse"  >
+                <li> <a class="active" routerLink="/" routerLinkActive="active">Dashboard 01</a> </li>
+                <li> <a routerLink="/dashboard02" routerLinkActive="active">Dashboard 02</a> </li>
+                <li> <a routerLink="/dashboard03" routerLinkActive="active">Dashboard 03</a> </li>
+                <li> <a routerLink="/dashboard04" routerLinkActive="active">Dashboard 04</a> </li>
+                <li> <a routerLink="/dashboard05" routerLinkActive="active">Dashboard 05</a> </li>
+              </ul>
+            </li>
+            <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Components </li>
+            <!-- menu item Elements-->
+            <li>
+              <a href="javascript:void(0);" data-toggle="collapse" data-target="#elements" (click)="expandCollpse('elements')">
+                <div class="pull-left"><i class="ti-palette"></i><span class="right-nav-text">Elements</span></div>
+                <div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div>
+              </a>
+              <ul id="elements" class="collapse">
+                <li><a routerLink="/accordions" routerLinkActive="active">Accordions</a></li>
+                <li><a routerLink="/alerts" routerLinkActive="active">Alerts</a></li>
+                <li><a routerLink="/buttons" routerLinkActive="active">Buttons</a></li>
+                <li><a routerLink="/colorpicker" routerLinkActive="active">Colorpicker</a></li>
+                <li><a routerLink="/dropdown" routerLinkActive="active">Dropdown</a></li>
+                <li><a routerLink="/lists" routerLinkActive="active">lists</a></li>
+                <li><a routerLink="/modal" routerLinkActive="active">modal</a></li>
+                <li><a routerLink="/nav" routerLinkActive="active">nav</a></li>
+                <li><a routerLink="/nicescroll" routerLinkActive="active">nicescroll</a></li>
+                <li><a routerLink="/pricingtable" routerLinkActive="active">pricing table</a></li>
+                
+
+                <li><a routerLink="/datepicker" routerLinkActive="active">date picker</a></li>
+                <li><a routerLink="/tabs" routerLinkActive="active">tabs</a></li>
+                <li><a routerLink="/typography" routerLinkActive="active">typography</a></li>
+                <li><a routerLink="/popover-tooltips" routerLinkActive="active">Popover tooltips</a></li>
+                <li><a routerLink="/progress" routerLinkActive="active">progress</a></li>
+                <li><a routerLink="/switch" routerLinkActive="active">switch</a></li>
+                <li><a routerLink="/sweetalert2" routerLinkActive="active">sweetalert2</a></li>
+              </ul>
+            </li>
+            <!-- menu item calendar-->
+            <li>
+              <a routerLink="/calendar" routerLinkActive="active">
+                <i class="ti-calendar"></i><span class="right-nav-text">calendar</span></a>
+            </li>
+            
+             <!-- menu item chat-->
+             <li> 
+               <a routerLink="/chat" routerLinkActive="active"><i class="ti-comments"></i><span class="right-nav-text">Chat </span></a>  
+             </li>
+             <!-- menu item mailbox-->
+            <li>
+              <a routerLink="/mail" routerLinkActive="active"><i class="ti-email"></i><span class="right-nav-text">Mail box</span> <span class="badge badge-pill badge-warning float-right mt-1">HOT</span> </a>
+            </li>
+            <!-- menu item Charts-->
+            <li>
+              <a routerLink="/chart" routerLinkActive="active"><i class="ti-email"></i><span class="right-nav-text">Charts</span> </a>
+            </li>
+            <!-- menu font icon-->
+            <li>
+              <a href="javascript:void(0);" data-toggle="collapse" data-target="#font-icon" (click)="expandCollpse('font-icon')">
+                <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">font icon</span></div>
+                <div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div>
+              </a>
+              <ul id="font-icon" class="collapse hide">
+                <li> <a routerLink="/fontawesome-icon" routerLinkActive="active">font Awesome</a> </li>
+                <li> <a routerLink="/themify-icons" routerLinkActive="active">Themify icons</a> </li>
+                <li> <a routerLink="/weather-icon" routerLinkActive="active">Weather icons</a> </li>
+              </ul>
+            </li>
+            <!-- menu title -->
+            <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Widgets, Forms & Tables </li>
+            <!-- menu item Widgets-->
+            <li>
+              <a routerLink="/widgets" routerLinkActive="active"><i class="ti-blackboard"></i><span class="right-nav-text">Widgets</span> <span class="badge badge-pill badge-danger float-right mt-1">59</span> </a>
+            </li>
+            <!-- menu item Form-->
+            <li>
+              <a href="javascript:void(0);" data-toggle="collapse" data-target="#Form" (click)="expandCollpse('Form')">
+                <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">Form and Editor</span></div>
+                <div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div>
+              </a>
+              <ul id="Form" class="collapse">
+                <li> <a routerLink="/editor" routerLinkActive="active">Editor</a> </li>
+                <li> <a routerLink="/form-input" routerLinkActive="active">Form input</a> </li>
+                <li> <a routerLink="/form-validation" routerLinkActive="active">Form Validation</a> </li>
+                <li> <a routerLink="/input-group" routerLinkActive="active">input group</a> </li>
+                <li> <a routerLink="/toastr" routerLinkActive="active">toastr</a> </li>
+              </ul>
+            </li>
+            <!-- menu item table -->
+            <li>
+              <a href="javascript:void(0);" data-toggle="collapse" data-target="#table" (click)="expandCollpse('Table')">
+                <div class="pull-left"><i class="ti-layout-tab-window"></i><span class="right-nav-text">data table</span></div>
+                <div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div>
+              </a>
+              <ul id="Table" class="collapse">
+                <li> <a routerLink="/data-html-table" routerLinkActive="active">Data Html Table</a> </li>
+                <li> <a routerLink="/data-local" routerLinkActive="active">Data Local</a> </li>
+                <li> <a routerLink="/data-table" routerLinkActive="active">Data Table</a> </li>
+              </ul>
+            </li>
+            <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">More Pages</li>
+            <!-- menu item Custom pages-->
+            <li>
+              <a href="javascript:void(0);" data-toggle="collapse" data-target="#custom-page" (click)="expandCollpse('custom-page')">
+                <div class="pull-left"><i class="ti-file"></i><span class="right-nav-text">Custom pages</span></div>
+                <div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div>
+              </a>
+              <ul id="custom-page" class="collapse">
+                <li> <a routerLink="/projects" routerLinkActive="active">projects</a> </li>
+                <li> <a routerLink="/project-summary" routerLinkActive="active">Projects summary</a> </li>
+                <li> <a routerLink="/profile" routerLinkActive="active">profile</a> </li>
+                <li> <a routerLink="/app-contacts" routerLinkActive="active">App contacts</a> </li>
+                <li> <a routerLink="/contacts" routerLinkActive="active">Contacts</a> </li>
+                <li> <a routerLink="/file-manager" routerLinkActive="active">file manager</a> </li>
+                <li> <a routerLink="/invoice" routerLinkActive="active">Invoice</a> </li>
+                <li> <a routerLink="/blank" routerLinkActive="active">Blank page</a> </li>
+                <li> <a routerLink="/layout-container" routerLinkActive="active">layout container</a> </li>
+                <li> <a routerLink="/error" routerLinkActive="active">Error</a> </li>
+                <li> <a routerLink="/faqs" routerLinkActive="active">faqs</a> </li>
+              </ul>
+            </li>
+            <!-- menu item Authentication-->
+            <li>
+              <a href="javascript:void(0);" data-toggle="collapse" data-target="#authentication" (click)="expandCollpse('authentication')">
+                <div class="pull-left"><i class="ti-id-badge"></i><span class="right-nav-text">Authentication</span></div>
+                <div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div>
+              </a>
+              <ul id="authentication" class="collapse">
+                <li> <a routerLink="/login" routerLinkActive="active">login</a> </li>
+                <li> <a routerLink="/register" routerLinkActive="active">register</a> </li>
+                <li> <a routerLink="/lockscreen" routerLinkActive="active">Lock screen</a> </li>
+              </ul>
+            </li>
+            <!-- menu item maps-->
+            <li>
+              <a routerLink="/maps" routerLinkActive="active"><i class="ti-location-pin"></i><span class="right-nav-text">maps</span> </a>
+            </li>
+            <!-- menu item timeline-->
+            <li>
+              <a routerLink="/timeline" routerLinkActive="active"><i class="ti-panel"></i><span class="right-nav-text">timeline</span> </a>
+            </li>
+            <!-- menu item Multi level-->
+            <li>
+              <a href="javascript:void(0);" data-toggle="collapse" data-target="#multi-level" (click)="expandCollpse('multi-level')"><div class="pull-left"><i class="ti-layers"></i><span class="right-nav-text">Multi level Menu</span></div><div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
+              <ul id="multi-level" class="collapse">
+                <li>
+                  <a href="javascript:void(0);" data-toggle="collapse" data-target="#auth" (click)="expandCollpse('auth')">Level item 1<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
+                  <ul id="auth" class="collapse">
+                    <li>
+                      <a href="javascript:void(0);" data-toggle="collapse" data-target="#login" (click)="expandCollpse('login')">Level item 1.1<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
+                      <ul id="login" class="collapse">
+                        <li>
+                          <a href="javascript:void(0);" data-toggle="collapse" data-target="#invoice" (click)="expandCollpse('invoice')">level item 1.1.1<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
+                          <ul id="invoice" class="collapse">
+                            <li> <a routerLink="">level item 1.1.1.1</a> </li>
+                            <li> <a routerLink="">level item 1.1.1.2</a> </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li> <a routerLink="">level item 1.2</a> </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" data-toggle="collapse" data-target="#error" (click)="expandCollpse('error')">level item 2<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
+                  <ul id="error" class="collapse">
+                    <li> <a routerLink="">level item 2.1</a> </li>
+                    <li> <a routerLink="">level item 2.2</a> </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Left Sidebar End-->
+      <!--=================================
+       Main content -->
+      <!--=================================
+      wrapper -->
+
+      <div class="content-wrapper">
+        <router-outlet></router-outlet>
+
+        <footer class="bg-white p-4">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="text-center text-md-left">
+                <p class="mb-0"> &copy; Copyright <span id="copyright">
+                <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> <a href="javascript:void(0);"> Webmin </a> All Rights Reserved </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <ul class="text-center text-md-right">
+                <li class="list-inline-item"><a href="javascript:void(0);">Terms & Conditions </a> </li>
+                <li class="list-inline-item"><a href="javascript:void(0);">API Use Policy </a> </li>
+                <li class="list-inline-item"><a href="javascript:void(0);">Privacy Policy </a> </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </div><!-- main content wrapper end-->
+    </div>
+  </div>
+
+  <!--=================================
+   footer -->
+
