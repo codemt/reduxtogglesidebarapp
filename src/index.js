@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 import registerServiceWorker from './registerServiceWorker';
+import Main from './Router';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render( <Main />, document.getElementById('root'));
 registerServiceWorker();
