@@ -4,7 +4,6 @@ import './App.css';
 import NavBar from './components/navbar';
 import SideBar from './components/sidebar';
 import { connect } from 'react-redux';
-import   dispatcher   from './actions/dispatcher';
 import DashboardWidget1 from './components/dashboard/dashboard-widget1';
 import DashboardWidget2 from './components/dashboard/dashboard-widget2';
 import DashboardWidget3 from './components/dashboard/dashboard-widget3';
@@ -35,7 +34,7 @@ toggleClassName(e){
 }
   render() {
 
-    const sidebarName = this.props.name;
+    const sidebarName = this.props.name.sidebarname;
     console.log('sidebarname is '+sidebarName);
     const wrapperName = this.state.wrapperName;
     console.log(wrapperName);
@@ -69,7 +68,7 @@ toggleClassName(e){
   {/* <!-- Top bar left --> */}
   <ul className="nav navbar-nav mr-auto">
     <li className="nav-item">
-      <a id="button-toggle" className="button-toggle-nav inline-block ml-20 pull-left" href="javascript:void(0);"><i className="zmdi zmdi-menu ti-align-right"></i></a>
+      <a id="button-toggle" className="button-toggle-nav inline-block ml-20 pull-left" href="javascript:void(0);" onClick={ ()=> this.props.setName("wrapper")}><i className="zmdi zmdi-menu ti-align-right"></i></a>
     </li>
     <li className="nav-item">
       <div className="search">
@@ -228,16 +227,16 @@ const mapStatetoProps = state  => ({
 });
 const mapDispatchtoProps = dispatch => ({
 
-      setName : (name) => {
+  setName : (name) => {
 
-            dispatch({
+        dispatch({
 
-                type: "TOGGLE_SIDEBAR",
-                payload: name 
+            type: "TOGGLE_SIDEBAR",
+            payload: name 
 
-            })
+        })
 
-      }
+  }
 
 })
 export default connect(mapStatetoProps,mapDispatchtoProps)(App);
