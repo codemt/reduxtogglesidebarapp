@@ -11,34 +11,11 @@ import DashboardWidget4 from './components/dashboard/dashboard-widget4';
 import DashboardWidget5 from './components/dashboard/dashboard-widget5';
 
 class App extends Component {
-
-  constructor(props){
-
-    super(props);
-    this.state = {
-
-        wrapperName : 'wrapper slide-menu'
-
-    }
-    this.toggleClassName = this.toggleClassName.bind(this);
-    
-}
-toggleClassName(e){
-      e.preventDefault();
-    this.setState({
-
-        wrapperName : 'wrapper'
-        
-    })
-    console.log(this.state.wrapperName);
-}
   render() {
 
     const sidebarName = this.props.name.sidebarname;
     console.log('sidebarname is '+sidebarName);
-    const wrapperName = this.state.wrapperName;
-    console.log(wrapperName);
-    
+   
     return (
 
        
@@ -229,12 +206,26 @@ const mapDispatchtoProps = dispatch => ({
 
   setName : (name) => {
 
-        dispatch({
+        if(name != "wrapper slide-menu")
+        {
+              dispatch({
+
+                type: "TOGGLE_SIDEBAR",
+                payload: name 
+
+            })
+        }
+        if(name == "wrapper")
+        {
+          dispatch({
 
             type: "TOGGLE_SIDEBAR",
-            payload: name 
+            payload: "wrapper slide-menu" 
 
         })
+
+        }
+       
 
   }
 
