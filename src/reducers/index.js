@@ -3,6 +3,6 @@ import sidebarReducer from './sidebarReducer';
 
 
 export default combineReducers({
-    name : sidebarReducer
+     sidebarReducer,
 
 });

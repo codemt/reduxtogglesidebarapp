@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/navbar';
 import SideBar from './components/sidebar';
+
 import { connect } from 'react-redux';
 import DashboardWidget1 from './components/dashboard/dashboard-widget1';
 import DashboardWidget2 from './components/dashboard/dashboard-widget2';
@@ -11,11 +12,17 @@ import DashboardWidget4 from './components/dashboard/dashboard-widget4';
 import DashboardWidget5 from './components/dashboard/dashboard-widget5';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        sidebarname: this.props.sidebarname,
+    }
+}
   render() {
 
-    const sidebarName = this.props.name.sidebarname;
+    const sidebarName = this.props.sidebarname;
     console.log('sidebarname is '+sidebarName);
-   
+    console.log(this.props);
     return (
 
        
@@ -198,36 +205,37 @@ class App extends Component {
     );
   }
 }
-const mapStatetoProps = state  => ({
-  name : state.name
+// const mapStatetoProps = state  => ({
+//   name : state.name
 
-});
-const mapDispatchtoProps = dispatch => ({
+// });
+// const mapDispatchtoProps = dispatch => ({
 
-  setName : (name) => {
+//   setName : (name) => {
 
-        if(name != "wrapper slide-menu")
-        {
-              dispatch({
+//         if(name != "wrapper slide-menu")
+//         {
+//               dispatch({
 
-                type: "TOGGLE_SIDEBAR",
-                payload: name 
+//                 type: "TOGGLE_SIDEBAR",
+//                 payload: name 
 
-            })
-        }
-        if(name == "wrapper")
-        {
-          dispatch({
+//             })
+//         }
+//         if(name == "wrapper")
+//         {
+//           dispatch({
 
-            type: "TOGGLE_SIDEBAR",
-            payload: "wrapper slide-menu" 
+//             type: "TOGGLE_SIDEBAR",
+//             payload: "wrapper slide-menu" 
 
-        })
+//         })
 
-        }
+//         }
        
 
-  }
+//   }
 
-})
-export default connect(mapStatetoProps,mapDispatchtoProps)(App);
+// })
+
+export default App;
